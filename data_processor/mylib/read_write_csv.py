@@ -11,6 +11,7 @@ BASIC_FILE = 'basic'
 INTAKE_FORM_FILE = 'intake_form'
 OVERALL_FILE = 'grades'
 FINAL_ASSESSMENT_FILE = 'final_assessment'
+STATUS_FILE = 'status'
 
 
 def read_csv(filename: str) -> pd.DataFrame | None:

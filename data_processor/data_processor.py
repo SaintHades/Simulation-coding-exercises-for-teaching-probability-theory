@@ -6,6 +6,7 @@ import numpy as np
 
 from mylib.read_write_csv import (
     read_csv, write_csv,
+    STATUS_FILE,
     BASIC_FILE,
     INTAKE_FORM_FILE,
     OVERALL_FILE,
@@ -163,10 +164,9 @@ def clean_final() -> tuple[pd.DataFrame, pd.DataFrame]:
     return df, df_overall_right_part
 
 
-def clean_basic(df_grades: pd.DataFrame) -> pd.DataFrame:
+def clean_basic() -> pd.DataFrame:
     df = read_csv(BASIC_FILE)
     df.columns = ['id', 'section']
-    df = df.merge(df_grades, on='id')
 
     df['section'] = df['section'].map({
         1: NONE_GROUP,
@@ -175,25 +175,29 @@ def clean_basic(df_grades: pd.DataFrame) -> pd.DataFrame:
         4: BOTH_GROUP
     })
 
+    return df
+
+
+def completness(df):
     coding_done = pd.notna(df['coding_score'])
     handwritten_done = pd.notna(df['handwritten_score'])
     final_done = pd.notna(df['final_score'])
 
-    df = df[(
-                    (df['section'] == NONE_GROUP) & final_done
-                    & ~coding_done & ~handwritten_done
-            ) | (
-                    (df['section'] == CODING_GROUP) & final_done
-                    & coding_done & ~handwritten_done
-            ) | (
-                    (df['section'] == HANDWRITTEN_GROUP) & final_done
-                    & handwritten_done & ~coding_done
-            ) | (
-                    (df['section'] == BOTH_GROUP) & final_done
-                    & coding_done & handwritten_done
-            )][['id', 'section']]
+    df['completed'] = (
+                              (df['section'] == NONE_GROUP) & final_done
+                              & ~coding_done & ~handwritten_done
+                      ) | (
+                              (df['section'] == CODING_GROUP) & final_done
+                              & coding_done & ~handwritten_done
+                      ) | (
+                              (df['section'] == HANDWRITTEN_GROUP) & final_done
+                              & handwritten_done & ~coding_done
+                      ) | (
+                              (df['section'] == BOTH_GROUP) & final_done
+                              & coding_done & handwritten_done
+                      )
 
-    return df
+    return df[['id', 'completed']]
 
 
 if __name__ == '__main__':
@@ -203,14 +207,18 @@ if __name__ == '__main__':
 
     df_overall = df_overall_left.merge(df_overall_right, on='id')
 
-    df_basic = clean_basic(df_overall)
-    df_ids = df_basic['id'].to_frame()
+    df_basic = clean_basic()
 
+    df_completed = completness(df_basic.merge(df_overall, on='id'))
+    df_ids = df_completed[df_completed['completed']]['id'].to_frame()
+
+    df_basic = df_ids.merge(df_basic, on='id', how='left')
     df_form = df_ids.merge(df_form, on='id', how='left')
     df_overall = df_ids.merge(df_overall, on='id', how='left')
 
     df_final = df_ids.merge(df_final, on='id', how='left')
 
+    write_csv(df_completed, STATUS_FILE)
     write_csv(df_basic, BASIC_FILE)
     write_csv(df_form, INTAKE_FORM_FILE)
     write_csv(df_overall, OVERALL_FILE)
