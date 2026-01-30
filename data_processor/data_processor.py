@@ -138,15 +138,15 @@ def clean_final() -> tuple[pd.DataFrame, pd.DataFrame]:
 
         dfs.append(pd.DataFrame({
             f'{q_num}_score': df[f'{q_num}_score'] / df[f'{q_num}_pts'],
-            f'{q_num}_score_adj': (
-                    (
-                            df[f'{q_num}_score']
-                            * df[f'{q_num}_confident_level']  # .fillna(3)
-                    )
-                    / (
-                            df[f'{q_num}_pts'] * 5
-                    )
-            ),
+            # f'{q_num}_score_adj': (
+            #         (
+            #                 df[f'{q_num}_score']
+            #                 * df[f'{q_num}_confident_level'].fillna(3)
+            #         )
+            #         / (
+            #                 df[f'{q_num}_pts'] * 5
+            #         )
+            # ),
             f'{q_num}_confident_level': df[f'{q_num}_confident_level'],
         }))
     df = pd.concat(dfs, axis=1)
