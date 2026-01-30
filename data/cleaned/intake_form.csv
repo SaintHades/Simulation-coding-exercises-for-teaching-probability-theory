@@ -1,0 +1,11 @@
+id,recruitment_source,dsc_affiliation,math_affiliation,class_standing,stats_courses_taken,stats_confidence,chebyshev_familiarity,python_skill_level
+0,DSC 140B,major,neither,Second year,"MATH 180A, MATH 181A",4,2,5
+1,DSC 140B,major,neither,Third year,MATH 180A,4,3,5
+3,DSC 140B,major,neither,Third year,MATH 183,4,3,4
+9,DSC 140B,major,major,Third year,MATH 183,4,2,4
+11,DSC 140B,major,neither,Second year,MATH 183,3,1,4
+12,DSC 140B,major,neither,Third year,MATH 183,4,4,4
+15,DSC 80,major,neither,Third year (first year transfer),MATH 183,3,1,4
+24,DSC 180,major,neither,Fourth year (second year transfer),"MATH 180A, MATH 181A, MATH 183",5,5,5
+27,DSC 180,major,major,Fourth year,"MATH 180A, MATH 181A",4,4,4
+29,DSC 180,major,neither,third year transfer,"MATH 180A, MATH 181A",2,2,2

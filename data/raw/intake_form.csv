@@ -1,0 +1,40 @@
+id,Timestamp,Consent: I have read and understand the above consent form. I certify that I am 18 years old or older. I indicate my willingness to voluntarily take part in this study. ,"How did you learn about this study? If you heard about it from more than one DSC class, please select the one with the highest course number.",What is your affiliation with the Data Science undergraduate program at UCSD?,Do you have any affiliation with the Math department at UCSD?,Select your class standing:,Select any of the following probability or statistics courses you have either taken at UCSD or received transfer credit from UCSD for:,How would you rate your overall confidence with statistics and probability?,How would you rate your familiarity with Chebyshev's inequality?,How would you rate your python skills?
+0,1/15/2026 19:08:30,Yes,DSC 140B,I am a Data Science major,Neither of the above,Second year,"MATH 180A, MATH 181A",4,2,5
+1,1/15/2026 19:02:05,Yes,DSC 140B,I am a Data Science major,Neither of the above,Third year,MATH 180A,4,3,5
+2,1/15/2026 23:59:16,Yes,DSC 140B,I am a Data Science major,Neither of the above,Fourth year,"MATH 183, ECON 120A",3,3,5
+3,1/16/2026 0:02:36,Yes,DSC 140B,I am a Data Science major,Neither of the above,Third year,MATH 183,4,3,4
+4,1/15/2026 19:03:23,Yes,DSC 140B,I am a Data Science major,Neither of the above,Fourth year,ECON 120A,1,1,2
+5,1/15/2026 19:02:28,Yes,DSC 140B,I am a Data Science major,I am a Math minor,Second year,"MATH 180A, ECE 109, ECON 120A",5,4,4
+6,1/15/2026 23:47:37,Yes,DSC 140B,I am a Data Science major,Neither of the above,Second year,MATH 183,3,1,4
+7,1/15/2026 19:05:14,Yes,DSC 140B,I am a Data Science major,Neither of the above,Third year (first year transfer),MATH 183,3,1,2
+8,1/15/2026 21:52:08,Yes,DSC 140B,I am a Data Science major,Neither of the above,Third year,ECON 120A,3,2,5
+9,1/15/2026 19:05:04,Yes,DSC 140B,I am a Data Science major,I am a Math major,Third year,MATH 183,4,2,4
+10,1/15/2026 21:51:07,Yes,DSC 140B,I am a Data Science major,Neither of the above,Second year,MATH 180A,4,4,5
+11,1/16/2026 3:15:43,Yes,DSC 140B,I am a Data Science major,Neither of the above,Second year,MATH 183,3,1,4
+12,1/17/2026 0:42:27,Yes,DSC 140B,I am a Data Science major,Neither of the above,Third year,MATH 183,4,4,4
+13,1/17/2026 1:22:04,Yes,DSC 140B,I am a Data Science major,Neither of the above,Fourth year,MATH 183,4,2,5
+14,1/17/2026 18:31:20,Yes,DSC 80,I am a Data Science major,Neither of the above,Second year,MATH 186,3,3,5
+15,1/17/2026 19:53:36,Yes,DSC 80,I am a Data Science major,Neither of the above,Third year (first year transfer),MATH 183,3,1,4
+16,1/17/2026 23:35:37,Yes,DSC 80,I am a Data Science major,Neither of the above,Third year,"MATH 180A, MATH 183",3,3,4
+17,1/22/2026 1:16:18,Yes,DSC 180,I am a Data Science major,I am a Math minor,Fourth year,"MATH 180A, MATH 181A",4,3,5
+18,1/22/2026 0:24:35,Yes,DSC 180,I am a Data Science major,Neither of the above,Third year,MATH 183,3,1,4
+19,1/22/2026 0:51:09,Yes,DSC 180,I am a Data Science major,Neither of the above,Fourth year,MATH 183,4,3,5
+20,1/22/2026 0:23:36,Yes,DSC 180,I am a Data Science major,Neither of the above,Third year transfer,MATH 183,2,2,4
+21,1/22/2026 1:54:39,Yes,DSC 180,I am a Data Science major,Neither of the above,Fourth year,ECON 120A,4,2,4
+22,1/22/2026 0:27:50,Yes,DSC 180,I am a Data Science major,Neither of the above,Fourth year,MATH 183,3,1,4
+23,1/22/2026 0:41:56,Yes,DSC 180,I am a Data Science major,Neither of the above,Fourth year,ECON 120A,2,2,4
+24,1/22/2026 0:30:45,Yes,DSC 180,I am a Data Science major,Neither of the above,Fourth year (second year transfer),"MATH 180A, MATH 181A, MATH 183",5,5,5
+25,1/22/2026 1:07:42,Yes,DSC 180,I am a Data Science major,I am a Math minor,Fourth year (second year transfer),"MATH 180A, MATH 181A",5,5,5
+26,1/22/2026 4:36:45,Yes,DSC 180,I am a Data Science minor,I am a Math major,Fourth year,MATH 183,3,2,4
+27,1/22/2026 5:38:28,Yes,DSC 180,I am a Data Science major,I am a Math major,Fourth year,"MATH 180A, MATH 181A",4,4,4
+28,1/23/2026 0:30:16,Yes,DSC 40B,I am a Data Science major,Neither of the above,"I am a second year student, but for the next question, I have not taken any of the courses listed there. Since it is a required question, I just chose the first one. I am writing here just to clarify that I have not yet taken that course, Math 180A. Thank you!",MATH 180A,2,1,3
+29,1/22/2026 5:50:11,Yes,DSC 180,I am a Data Science major,Neither of the above,third year transfer,"MATH 180A, MATH 181A",2,2,2
+30,1/22/2026 22:49:29,Yes,DSC 120,I am a Data Science major,Neither of the above,Third year,ECON 120A,3,3,4
+31,1/22/2026 21:31:05,Yes,DSC 100,I am a Data Science major,Neither of the above,Second year,MATH 183,3,3,4
+32,1/23/2026 0:53:34,Yes,DSC 140B,I am a Data Science major,Neither of the above,Third year,"MATH 180A, MATH 181A",4,2,4
+33,1/23/2026 10:23:52,Yes,DSC 140B,I am a Data Science major,Neither of the above,Third year,MATH 183,4,4,5
+34,1/23/2026 18:33:45,Yes,DSC 140B,I am a Data Science major,Neither of the above,Fourth year (second year transfer),"MATH 180A, MATH 181A",3,3,4
+35,1/23/2026 1:38:25,Yes,DSC 140B,I am a Data Science major,Neither of the above,Third year,MATH 183,4,1,5
+36,1/23/2026 18:13:10,Yes,DSC 100,I am a Data Science major,Neither of the above,Second year,MATH 180A,2,2,3
+37,1/25/2026 4:20:50,Yes,DSC 140B,I am a Data Science major,Neither of the above,Third year (first year transfer),ECON 120A,2,2,3
+38,1/27/2026 16:23:45,Yes,DSC 140B,I am a Data Science major,Neither of the above,Fourth year (second year transfer),ECON 120A,4,3,3
