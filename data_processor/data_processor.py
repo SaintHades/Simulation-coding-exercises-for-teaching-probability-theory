@@ -197,7 +197,7 @@ def completness(df):
                               & coding_done & handwritten_done
                       )
 
-    return df[['id', 'completed']]
+    return df[['id', 'section', 'completed']]
 
 
 if __name__ == '__main__':
