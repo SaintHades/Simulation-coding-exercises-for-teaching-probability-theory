@@ -59,6 +59,9 @@ def clean_form() -> pd.DataFrame:
     df.columns = INTAKE_FORM['col_name']
     df = df.drop(columns=['timestamp', 'consent_given'])
 
+    df.loc[28, 'class_standing'] = 'Second year'
+    df.loc[28, 'stats_courses_taken'] = 'None of the above'
+
     df['dsc_affiliation'] = (
         df['dsc_affiliation']
         .map(INTAKE_FORM['dsc_affiliation_map'])

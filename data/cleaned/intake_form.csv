@@ -7,5 +7,8 @@ id,recruitment_source,dsc_affiliation,math_affiliation,class_standing,stats_cour
 12,DSC 140B,major,neither,Third year,MATH 183,4,4,4
 15,DSC 80,major,neither,Third year (first year transfer),MATH 183,3,1,4
 24,DSC 180,major,neither,Fourth year (second year transfer),"MATH 180A, MATH 181A, MATH 183",5,5,5
+26,DSC 180,minor,major,Fourth year,MATH 183,3,2,4
 27,DSC 180,major,major,Fourth year,"MATH 180A, MATH 181A",4,4,4
+28,DSC 40B,major,neither,Second year,None of the above,2,1,3
 29,DSC 180,major,neither,third year transfer,"MATH 180A, MATH 181A",2,2,2
+30,DSC 120,major,neither,Third year,ECON 120A,3,3,4
