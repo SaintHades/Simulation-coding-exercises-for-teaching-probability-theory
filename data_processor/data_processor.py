@@ -13,10 +13,10 @@ from mylib.read_write_csv import (
     FINAL_ASSESSMENT_FILE
 )
 
-NONE_GROUP = 'none'
-CODING_GROUP = 'coding_only'
-HANDWRITTEN_GROUP = 'handwritten_only'
-BOTH_GROUP = 'both'
+NONE_GROUP = 1
+CODING_GROUP = 2
+HANDWRITTEN_GROUP = 3
+BOTH_GROUP = 4
 
 INTAKE_FORM = {
     'col_name': [
@@ -178,7 +178,7 @@ def clean_basic() -> pd.DataFrame:
     return df
 
 
-def completeness(df):
+def completness(df):
     coding_done = pd.notna(df['coding_score'])
     handwritten_done = pd.notna(df['handwritten_score'])
     final_done = pd.notna(df['final_score'])
@@ -209,7 +209,7 @@ if __name__ == '__main__':
 
     df_basic = clean_basic()
 
-    df_completed = completeness(df_basic.merge(df_overall, on='id'))
+    df_completed = completness(df_basic.merge(df_overall, on='id'))
     df_ids = df_completed[df_completed['completed']]['id'].to_frame()
 
     df_basic = df_ids.merge(df_basic, on='id', how='left')
