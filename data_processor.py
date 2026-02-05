@@ -1,22 +1,33 @@
 import re
-from typing import Tuple
-
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
-from mylib.read_write_csv import (
-    read_csv, write_csv,
-    STATUS_FILE,
-    BASIC_FILE,
-    INTAKE_FORM_FILE,
-    OVERALL_FILE,
-    FINAL_ASSESSMENT_FILE
-)
+DATA_DIR = Path('data')
+RAW_DIR = Path('raw')
+CLEANED_DIR = Path('cleaned')
 
-NONE_GROUP = 1
-CODING_GROUP = 2
-HANDWRITTEN_GROUP = 3
-BOTH_GROUP = 4
+BASIC_FILE = 'basic'
+INTAKE_FORM_FILE = 'intake_form'
+OVERALL_FILE = 'grades'
+FINAL_ASSESSMENT_FILE = 'final_assessment'
+STATUS_FILE = 'status'
+
+
+def read_csv(filename: str) -> pd.DataFrame | None:
+    dir_path = DATA_DIR / RAW_DIR
+
+    return pd.read_csv(dir_path / f'{filename}.csv')
+
+
+def write_csv(df: pd.DataFrame, filename: str):
+    dir_path = DATA_DIR / CLEANED_DIR
+    dir_path.mkdir(parents=True, exist_ok=True)
+
+    df.to_csv(dir_path / f'{filename}.csv', index=False)
+
+    return filename
+
 
 INTAKE_FORM = {
     'col_name': [
@@ -52,6 +63,11 @@ OVERALL = {
         'handwritten_score', 'handwritten_total'
     ]
 }
+
+NONE_GROUP = 1
+CODING_GROUP = 2
+HANDWRITTEN_GROUP = 3
+BOTH_GROUP = 4
 
 
 def clean_form() -> pd.DataFrame:
@@ -135,7 +151,7 @@ def clean_final() -> tuple[pd.DataFrame, pd.DataFrame]:
         total_score_adj += (
                 df[f'{q_num}_score']
                 * (
-                        df[f'{q_num}_confident_level'].fillna(3) / 5
+                        (df[f'{q_num}_confident_level'].fillna(3) - 1) / (5 - 1)
                 )
         )
         total_points += df[f'{q_num}_pts']
@@ -178,7 +194,7 @@ def clean_basic() -> pd.DataFrame:
     return df
 
 
-def completness(df):
+def completeness(df):
     coding_done = pd.notna(df['coding_score'])
     handwritten_done = pd.notna(df['handwritten_score'])
     final_done = pd.notna(df['final_score'])
@@ -209,7 +225,7 @@ if __name__ == '__main__':
 
     df_basic = clean_basic()
 
-    df_completed = completness(df_basic.merge(df_overall, on='id'))
+    df_completed = completeness(df_basic.merge(df_overall, on='id'))
     df_ids = df_completed[df_completed['completed']]['id'].to_frame()
 
     df_basic = df_ids.merge(df_basic, on='id', how='left')
