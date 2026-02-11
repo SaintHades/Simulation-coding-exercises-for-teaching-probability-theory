@@ -1,1 +1,1 @@
-# Simulation Coding Exercises For Teaching Probability Theory
+# Simulation Coding Exercises for Teaching Probability Theory
