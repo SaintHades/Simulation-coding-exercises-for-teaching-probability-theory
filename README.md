@@ -216,7 +216,7 @@ This repo includes `index.md` and `_config.yml` for a lightweight GitHub Pages s
 
 ## 8) Related Repository (Teaching Materials)
 
-We maintain a separate repo that contains the probability teaching materials (exercises/solutions/pages).
+We maintain a separate repo that contains the probability teaching materials (exercises/solutions/lesson notes).
 
 * Teaching materials repo: **https://github.com/peterbchi/codingprobsim25**
 
