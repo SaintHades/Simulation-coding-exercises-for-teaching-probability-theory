@@ -144,7 +144,7 @@ This notebook fits models for hypothesis testing and saves analysis outputs unde
 
 ---
 
-## 5) Hypotheses & What We Test
+<!-- ## 5) Hypotheses & What We Test -->
 
 <!-- We keep README minimal: **two hypotheses**, evaluated via model coefficients and model comparison.
 
@@ -170,9 +170,9 @@ Operational check:
   * AIC/BIC
   * validation performance (optional if implemented) -->
 
----
+<!-- --- -->
 
-## 6) Model Definitions
+<!-- ## 6) Model Definitions -->
 <!-- We use two primary model specifications.
 
 ### Model 1 (core predictors; no intake covariates)
@@ -200,9 +200,9 @@ Adds intake-form covariates to Model 1:
 
 If model selection is performed (e.g., p-value based trimming), the procedure and final selected set should be documented in `statstical_pipeline.ipynb`. -->
 
----
+<!-- --- -->
 
-## 7) GitHub Pages
+## 5) GitHub Pages
 
 This repo includes `index.md` and `_config.yml` for a lightweight GitHub Pages site (navigation + links).
 
@@ -214,7 +214,7 @@ This repo includes `index.md` and `_config.yml` for a lightweight GitHub Pages s
 
 ---
 
-## 8) Related Repository (Teaching Materials)
+## 6) Related Repository (Teaching Materials)
 
 We maintain a separate repo that contains the probability teaching materials (exercises/solutions/lesson notes).
 
@@ -227,11 +227,10 @@ Relationship:
 
 ---
 
-<!-- ## 9) Authors
-
-* [Name 1]
-* [Name 2]
-* [Name 3]
-* [Name 4]
-* [Name 5]
-* Peter Chi (Mentor) -->
+## 7) Authors
+* Alyssa Tallada
+* Jingjun Ni
+* Marguerite Church
+* Rihui Ling
+* Yunqi Zhang
+* Peter Chi (Mentor)
