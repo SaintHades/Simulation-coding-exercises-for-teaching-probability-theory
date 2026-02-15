@@ -134,13 +134,13 @@ conda install -c conda-forge jupyter numpy pandas matplotlib statsmodels -y
 
 ### Step 1 — EDA
 
-Open `EDA.ipynb` and run **top-to-bottom**.
-This notebook performs sanity checks and produces EDA outputs saved under `data/eda/`.
+Open `exploratory_data_analysis.ipynb` and run **top-to-bottom**.
+This notebook performs sanity checks and produces EDA outputs saved under `data/exploratory_data_analysis_output/`.
 
-### Step 2 — Statistical Pipeline
+### Step 2 — Statistical Alaysis
 
-Open `statstical_pipeline.ipynb` and run **top-to-bottom**.
-This notebook fits models for hypothesis testing and saves analysis outputs under `data/statstical analysis/`.
+Open `statstical_analysis.ipynb` and run **top-to-bottom**.
+This notebook fits models for hypothesis testing and saves analysis outputs under `data/statstical_analysis_output/`.
 
 ---
 
