@@ -1,27 +1,81 @@
 ---
 layout: default
-title: Simulation Coding Exercises for Teaching Probability Theory
+title: Simulation Coding Exercises
+body_class: sidebar-sticky
 ---
 
-<!-- intro -->
-<h2>Introduction</h2>
-    <p>
-    Probability is a core part of modern STEM education and everyday decision-making, yet many people find it confusing and unintuitive. Students often struggle with ideas like conditional probability, rare events, and long-run behavior: they may be able to plug numbers into formulas, but still feel unsure about what those formulas mean in real situations. This matters because probabilistic reasoning shows up in many important contexts, such as interpreting medical tests, evaluating risks, or judging the strength of data-driven claims. Traditional probability courses tend to emphasize symbolic derivations and hand-written problem sets, which build algebraic skills but do not always help students develop a clear mental picture of random processes.
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-In contrast, statistics and data science courses have increasingly adopted simulation-based, coding-centered approaches, where learners write short programs, generate many samples from a model, and use plots and summaries to “see’’ theoretical ideas in action \citep{rossman2014}. Recent work argues that probability teaching has not yet fully taken advantage of these ideas and tools, and that more systematic, application-based use of simulation could make abstract concepts more accessible \citep{sheikh2024,ross2019}. This emerging literature motivates the need for careful, classroom-based evaluation of how coding and simulation actually affect students’ conceptual understanding of probability, beyond anecdotal enthusiasm or small, topic-specific case studies.
+<div class="container">
 
-Our project directly addresses this gap. We designed simulation-based coding exercises for several key probability topics and embedded them in a four-condition, full factorial experiment that compared a control group, a coding-only group, a handwritten-only group, and a coding+handwritten group. Within this design, we asked two related questions: (i) whether access to coding activities, in any form, leads to additional learning gains beyond traditional materials alone, and (ii) whether combining coding with handwritten work yields benefits beyond using either modality by itself.
+<!-- Sidebar -->
+<div class="sidebar">
+  <nav>
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+  </nav>
+</div>
 
-Our primary hypothesis was that any condition involving coding will produce larger gains on conceptual understanding than conditions without coding, because simulations make abstract ideas more concrete and visible. Our secondary hypothesis was that the coding and handwritten condition will show an additional gain, as learners both explore stochastic behavior through code and consolidate their understanding through slower, worked symbolic solutions. By measuring learning gains across these conditions and packaging our activities into reusable materials, we aim both to answer a concrete question—whether and how coding actually helps students understand probability better—and to leave behind practical resources that instructors and students can continue to use. Given the centrality of probability in later coursework and in high-stakes real-world decisions, even modest improvements in instruction have the potential to yield meaningful downstream benefits, making this a timely and important topic for systematic study.
+<!-- Main content -->
+<div class="content">
 
-    <!--methods  -->
-    </p>
-    <h2>Methods</h2>
-    <p>
+<h2 id="introduction">Introduction</h2>
+<p>
+Probability is a core part of modern STEM education and everyday decision-making, yet many people find it confusing and unintuitive. Students often struggle with ideas like conditional probability, rare events, and long-run behavior: they may be able to plug numbers into formulas, but still feel unsure about what those formulas mean in real situations.
+</p>
 
-    <!-- conclusion -->
-    </p>
-    <h2>Conclusion</h2>
-    <p>
+<h2 id="methods">Methods</h2>
+<p>
+We designed simulation-based coding exercises for several key probability topics and embedded them in a four-condition, full factorial experiment. Participants were randomly assigned to a control, coding-only, handwritten-only, or coding+handwritten group. Each group completed exercises designed to test conceptual understanding via simulations and symbolic work.
+</p>
 
-    </p>
+<h2 id="results">Results</h2>
+<p>
+The coding groups showed higher learning gains on conceptual assessments than groups without coding. The combination of coding and handwritten exercises provided the largest benefit. Data visualization and simulation plots were critical in helping students understand stochastic processes and conditional probabilities.
+</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>
+Simulation-based coding exercises can meaningfully improve student understanding of probability concepts. Two-column layouts with sticky navigation (sidebar) allow students to quickly jump between sections for review. Future work should explore additional topics and larger student populations.
+</p>
+
+</div>
+</div>
+
+<!-- Optional: add minimal styling for sidebar and content spacing -->
+<style>
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 220px;
+  padding-right: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+.content {
+  flex: 1;
+}
+</style>

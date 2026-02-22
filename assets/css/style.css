@@ -1,0 +1,31 @@
+/* assets/css/main.css */
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 220px;
+  padding-right: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+.content {
+  flex: 1;
+}
