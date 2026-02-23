@@ -1,21 +1,6 @@
-title: Simulation-Coding-Exercises-for-Teaching-Probability-Theory
-author: Alyssa Tallada, Jingjun Ni, Marguerite Church, Rihui Ling, Yunqi Zhang, and Peter Chi (Mentor)
+title: Simulation Coding Exercises for Teaching Probability Theory
   
-description: >
-  Alyssa Tallada, Jingjun Ni, Marguerite Church, Rihui Ling, Yunqi Zhang
-
 remote_theme: poole/hyde
 plugins:
   - jekyll-remote-theme
 
-# minima:
-  # Minima skin selection.
-  # Available skins are:
-  # classic	           Default, light color scheme.
-  # dark	             Dark variant of the classic skin.
-  # auto	             Adaptive skin based on the default classic and dark skins.
-  # solarized-light	   Light variant of solarized color scheme.
-  # solarized-dark	   Dark variant of solarized color scheme.
-  # solarized	         Adaptive skin for solarized color scheme skins.
-  # skin: classic
-  
