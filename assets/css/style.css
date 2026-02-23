@@ -1,4 +1,76 @@
-/* assets/css/main.css */
+/* Layout */
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+aside.sidebar {
+  width: 220px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #000000 !important; /* black sidebar */
+  color: white !important;
+  padding: 20px;
+  height: 90vh; /* keeps sidebar tall */
+  overflow-y: auto; /* scroll if content is too long */
+}
+
+/* Hide Hyde theme defaults */
+.sidebar.site-sidebar,
+.header,
+.nav-bar,
+.site-nav,
+.site-title,
+.sidebar h1 {
+  display: none !important;
+}
+
+/* Sidebar links */
+aside.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+aside.sidebar li {
+  margin-bottom: 10px;
+}
+
+aside.sidebar a {
+  color: white !important;
+  text-decoration: none;
+}
+
+aside.sidebar a:hover {
+  color: #ffd700 !important;
+}
+
+/* Main content next to sidebar */
+.content {
+  margin-left: 260px; /* space for fixed sidebar */
+  flex: 1;
+  padding: 20px;
+}
+
+/* Optional: external links below title (if you want them separate from sidebar) */
+.external-links a {
+  display: inline-block !important;
+  padding: 8px 16px !important;
+  margin: 0 4px !important;
+  background-color: #b3afaf !important;
+  color: #000000 !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.external-links a:hover {
+  background-color: #ffffff !important;
+}
+
+/* assets/css/main.css
 .container {
   display: flex;
   max-width: 1000px;
@@ -8,8 +80,8 @@
 
 .sidebar {
   width: 220px;
-  padding-right: 20px;
-  position: fixed;
+  padding-right: 20px; */
+  /* position: fixed;
   top: 20px;
   left: 20px;
   background-color: #1e2049 !important;
@@ -62,16 +134,7 @@
 }
 
 .external-links a:hover {
-  background-color: #ffffff !important;
-}
+  background-color: #ffffff !important; */
+/* } */
 
-.footer,
-.site-footer,
-.copyright,
-.footer-content,
-[class*="copyright"],
-[class*="all-rights"],
-[class*="version"],
-[class*="v[0-9]"] {
-  display: none !important;
-}
+
