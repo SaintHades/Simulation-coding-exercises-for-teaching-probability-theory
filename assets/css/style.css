@@ -1,3 +1,4 @@
+/* Two-column layout */
 .container {
   display: flex;
   max-width: 1000px;
@@ -5,51 +6,60 @@
 }
 
 /* Sidebar */
-aside.sidebar {
+.sidebar {
   width: 220px;
   position: fixed;
   top: 20px;
   left: 20px;
-  background-color: #000 !important; /* black sidebar */
-  color: #fff !important;
+  background-color: #000;
+  color: #fff;
   padding: 20px;
-  height: 90vh; /* keeps sidebar tall */
+  height: 90vh;
   overflow-y: auto;
-  box-sizing: border-box;
 }
 
-/* Sidebar links */
-aside.sidebar ul {
+.sidebar ul {
   list-style: none;
   padding-left: 0;
 }
 
-aside.sidebar li {
+.sidebar li {
   margin-bottom: 10px;
 }
 
-aside.sidebar a {
+.sidebar a {
   color: #fff;
   text-decoration: none;
 }
 
-aside.sidebar a:hover {
+.sidebar a:hover {
   color: #ffd700;
 }
 
-/* Hide Hyde defaults that interfere */
-.sidebar.site-sidebar,
-.header,
-.nav-bar,
-.site-nav,
-.site-title,
-.sidebar h1 {
-  display: none !important;
-}
-
-/* Main content next to sidebar */
+/* Main content */
 .content {
-  margin-left: 260px; /* space for fixed sidebar + padding */
+  margin-left: 260px; /* space for sidebar */
   flex: 1;
   padding: 20px;
+}
+
+/* External links below title */
+.external-links {
+  margin: 10px 0 20px 0;
+}
+
+.external-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 8px;
+  background-color: #d3d3d3; /* light gray */
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.external-links a:hover {
+  background-color: #aaa; /* darker gray on hover */
+  color: #fff; /* optional: text turns white on hover */
 }
