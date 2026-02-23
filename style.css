@@ -1,6 +1,7 @@
 /* Typography: use Georgia throughout the site */
 :root {
   --site-serif: Georgia, "Times New Roman", Times, serif;
+  --sidebar-width: clamp(160px, 16vw, 360px);
 }
 
 html, body {
@@ -61,8 +62,8 @@ h1, h2, h3, h4, h5, h6 {
   gap: 35px; 
 }
 
-.sidebar li {
-  width: 100%;
+.sidebar {
+  width: var(--sidebar-width);
   margin-bottom: 10px;
 }
 
@@ -78,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   text-align: right;
   padding: 10px 14px;
+  transition: width 180ms ease;
   font-size: 2.25rem; 
   line-height: 1.2;
 }
@@ -121,13 +123,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Main content */
 .content {
-  margin-left: 400px;
+  margin-left: var(--sidebar-width);
   flex: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center; 
   text-align: center;
+  transition: margin-left 180ms ease;
 }
 
 .content > * {
