@@ -70,71 +70,19 @@ aside.sidebar a:hover {
   background-color: #ffffff !important;
 }
 
-/* assets/css/main.css
-.container {
-  display: flex;
-  max-width: 1000px;
-  margin: 0 auto;
-  margin-left: 260px;
-}
-
-.sidebar {
-  width: 220px;
-  padding-right: 20px; */
-  /* position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: #1e2049 !important;
-}
-
-.sidebar.site-sidebar {
-  display: none !important;
-}
+/* remove hyde header */
 .header,
 .nav-bar,
 .site-nav {
   display: none !important;
 }
 
+/* Hide Hyde footer if you don't want it */
+footer {
+  display: none !important;
+}
+
+/* Hide site title that sometimes appears in sidebar */
 .site-title {
   display: none !important;
 }
-
-.sidebar h1 {
-  display: none !important;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.sidebar li {
-  margin-bottom: 10px;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.content {
-  flex: 1;
-}
-
-.external-links a {
-  display: inline-block !important;
-  padding: 8px 16px !important;
-  margin: 0 4px !important;
-  background-color: #b3afaf !important;
-  color: #000000 !important;
-  text-decoration: none !important;
-  border-radius: 4px !important;
-  transition: background-color 0.3s ease !important;
-}
-
-.external-links a:hover {
-  background-color: #ffffff !important; */
-/* } */
-
-
