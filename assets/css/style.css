@@ -18,6 +18,11 @@
 .sidebar.site-sidebar {
   display: none !important;
 }
+.header,
+.nav-bar,
+.site-nav {
+  display: none !important;
+}
 
 .site-title {
   display: none !important;
