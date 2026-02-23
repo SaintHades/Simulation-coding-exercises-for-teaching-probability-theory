@@ -3,19 +3,30 @@
   display: flex;
   max-width: 1000px;
   margin: 0 auto;
+  margin-left: 260px;
 }
 
 .sidebar {
   width: 220px;
   padding-right: 20px;
-  position: sticky;
+  position: fixed;
   top: 20px;
-  background-color: #000000 !important;
+  left: 20px;
+  background-color: #1e2049 !important;
 }
 
 .sidebar.site-sidebar {
   display: none !important;
 }
+
+.site-title {
+  display: none !important;
+}
+
+.sidebar h1 {
+  display: none !important;
+}
+
 .sidebar ul {
   list-style: none;
   padding-left: 0;
