@@ -1,5 +1,3 @@
-title: Simulation Coding Exercises for Teaching Probability Theory
-  
 remote_theme: poole/hyde
 plugins:
   - jekyll-remote-theme
