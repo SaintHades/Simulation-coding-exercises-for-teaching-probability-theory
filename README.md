@@ -90,7 +90,7 @@ In `cleand/grades.csv`, the confidence-adjusted final score is computed using pe
 
 Conceptually:
 
-* For each subquestion ( q ): `adjusted_q = score_q * (confidence_q - 1)` (let the confidence_q' start 0)
+* For each subquestion ( q ): `adjusted_q = score_q * confidence_q`
 * The overall adjusted score is then aggregated across subquestions (weighted mean as implemented).
 
 > The exact aggregation rule used is implemented in the pipeline code/notebook and should be treated as the source of truth.
