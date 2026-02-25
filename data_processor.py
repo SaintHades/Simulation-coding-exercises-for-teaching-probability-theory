@@ -151,7 +151,7 @@ def clean_final() -> tuple[pd.DataFrame, pd.DataFrame]:
         total_score_adj += (
                 df[f'{q_num}_score']
                 * (
-                        (df[f'{q_num}_confident_level'].fillna(3) - 1) / (5 - 1)
+                        (df[f'{q_num}_confident_level'].fillna(3) - 1)
                 )
         )
         total_points += df[f'{q_num}_pts']
@@ -161,10 +161,10 @@ def clean_final() -> tuple[pd.DataFrame, pd.DataFrame]:
             # f'{q_num}_score_adj': (
             #         (
             #                 df[f'{q_num}_score']
-            #                 * df[f'{q_num}_confident_level'].fillna(3)
+            #                 * (df[f'{q_num}_confident_level'].fillna(3) - 1)
             #         )
             #         / (
-            #                 df[f'{q_num}_pts'] * 5
+            #                 df[f'{q_num}_pts'] * (5 - 1)
             #         )
             # ),
             f'{q_num}_confident_level': df[f'{q_num}_confident_level'],
@@ -174,7 +174,7 @@ def clean_final() -> tuple[pd.DataFrame, pd.DataFrame]:
     df_overall_right_part = pd.DataFrame({
         'id': ids,
         'final_score': total_score / total_points,
-        'final_score_adj': total_score_adj / total_points
+        'final_score_adj': total_score_adj / (total_points * (5 - 1))
     })
 
     return df, df_overall_right_part

@@ -16,3 +16,17 @@ id,recruitment_source,dsc_affiliation,math_affiliation,class_standing,stats_cour
 30,DSC 120,major,neither,Third year,ECON 120A,3,3,4
 33,DSC 140B,major,neither,Third year,MATH 183,4,4,5
 38,DSC 140B,major,neither,Fourth year (second year transfer),ECON 120A,4,3,3
+40,DSC 20,major,neither,First year,None of the above,3,4,4
+41,DSC 20,major,neither,First year,None of the above,1,2,3
+46,DSC 10,neither,major,First year,None of the above,2,1,2
+48,DSC 20,major,neither,First year,ECON 120A,3,3,2
+51,DSC 10,minor,major,First year,None of the above,2,2,2
+53,DSC 10,neither,neither,First year,None of the above,1,1,2
+56,DSC 20,major,neither,First year,None of the above,3,4,3
+58,DSC 20,major,neither,First year,None of the above,3,4,3
+61,DSC 10,neither,neither,First year,None of the above,2,2,2
+63,DSC 10,minor,neither,First year,None of the above,4,1,3
+64,DSC 190,major,major,Fourth year,"MATH 180A, MATH 181A",5,3,5
+66,DSC 10,neither,neither,Fourth year,None of the above,5,2,1
+80,DSC 190,major,neither,Third year,"MATH 180A, MATH 183",5,1,5
+88,DSC 10,minor,major,First year,None of the above,4,4,4
