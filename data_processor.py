@@ -116,6 +116,7 @@ def clean_form() -> pd.DataFrame:
         if class_standing_check.shape[0] != 0:
             print('-' * 50)
             print(f'Need check {col_name} column')
+            print('-' * 50)
             print(class_standing_check[['id', col_name]])
             print('-' * 50)
 
