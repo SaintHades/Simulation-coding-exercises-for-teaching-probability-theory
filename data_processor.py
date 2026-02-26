@@ -173,13 +173,6 @@ def clean_basic() -> pd.DataFrame:
     df = read_csv(BASIC_FILE)
     df.columns = ['id', 'section']
 
-    # df['section'] = df['section'].map({
-    #     1: NONE_GROUP,
-    #     2: CODING_GROUP,
-    #     3: HANDWRITTEN_GROUP,
-    #     4: BOTH_GROUP
-    # })
-
     return df
 
 
