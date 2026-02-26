@@ -46,7 +46,27 @@ INTAKE_FORM = {
         'I am a Math major': 'major',
         'I am a Math minor': 'minor',
         'Neither of the above': 'neither'
+    },
+    'manual_cleaning': {
+        'class_standing': {
+            20: 'Third year (first year transfer)',
+            28: 'Second year',
+            29: 'Third year (first year transfer)'
+        },
+        'stats_courses_taken': {
+            28: 'None of the above'
+        }
+    },
+    'check_format': {
+        'recruitment_source': (
+            r'^(?:DSC|CSE) \d{2,3}'
+        ),
+        'class_standing': (
+            r'^(?:First|Second|Third|Fourth) year'
+            r'(?: \((?:first|second) year transfer\))?$'
+        )
     }
+
 }
 
 OVERALL = {
@@ -76,9 +96,6 @@ def clean_form() -> pd.DataFrame:
     df.columns = INTAKE_FORM['col_name']
     df = df.drop(columns=['timestamp', 'consent_given'])
 
-    df.loc[28, 'class_standing'] = 'Second year'
-    df.loc[28, 'stats_courses_taken'] = 'None of the above'
-
     df['dsc_affiliation'] = (
         df['dsc_affiliation']
         .map(INTAKE_FORM['dsc_affiliation_map'])
@@ -87,6 +104,20 @@ def clean_form() -> pd.DataFrame:
         df['math_affiliation']
         .map(INTAKE_FORM['math_affiliation_map'])
     )
+
+    for col_name, cleaning_dict in INTAKE_FORM['manual_cleaning'].items():
+        for sid, v in cleaning_dict.items():
+            df.loc[sid, col_name] = v
+
+    for col_name, col_format in INTAKE_FORM['check_format'].items():
+        class_standing_check = df[
+            ~df[col_name].str.contains(col_format)
+        ]
+        if class_standing_check.shape[0] != 0:
+            print('-' * 50)
+            print(f'Need check {col_name} column')
+            print(class_standing_check[['id', col_name]])
+            print('-' * 50)
 
     return df
 
