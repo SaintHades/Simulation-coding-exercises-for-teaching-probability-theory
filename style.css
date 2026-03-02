@@ -20,13 +20,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Two-column layout */
 .container {
   display: flex;
+  width: 80%;
   max-width: 1400px; 
   margin: 0 auto;
 }
 
 
 .sidebar {
-  width: 200px;
+  width: 20%;
+  max-width: 200px;
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -77,10 +79,10 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   display: block;
   width: 100%;
-  text-align: right;
-  padding: 10px 14px;
+  text-align: left;
+  padding: 0px 0px;
   transition: width 180ms ease;
-  font-size: 2.25rem; 
+  font-size: 24px; 
   line-height: 1.2;
 }
 
