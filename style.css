@@ -10,6 +10,18 @@ html, body {
   color: #222;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f5f5f5;
+}
+
+/* faint grid background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle at 0 0, rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,9 +32,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Two-column layout */
 .container {
   display: flex;
-  width: 90%;
-  max-width: 1400px; 
+  width: 100%;          /* use full available width */
+  max-width: 1600px;    /* allow a wider layout */
   margin: 0 auto;
+  padding: 0 20px;      /* some horizontal breathing room */
 }
 
 
@@ -34,8 +47,10 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #020311; 
+  background: linear-gradient(180deg, #020311 0%, #1a124b 100%);
   color: #fff;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  animation: sidebarShift 12s ease-in-out infinite alternate;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
@@ -81,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   box-sizing: border-box; 
   text-align: right;
-  padding: 6px 0px; 
+  padding: 6px 12px; /* small right gap so text sits near right edge */ 
   transition: width 180ms ease;
   font-size: 1rem;
   line-height: 1.2;
@@ -126,6 +141,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Main content */
+
+/* animated sidebar gradient */
+@keyframes sidebarShift {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* headings decorative underline */
+.content h1, .content h2, .content h3 {
+  position: relative;
+}
+.content h1::after, .content h2::after, .content h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: #706fab;
+  transition: width 0.3s ease;
+}
+.content h1:hover::after,
+.content h2:hover::after,
+.content h3:hover::after {
+  width: 100%;
+}
+
+/* subtle glow on sidebar links */
+.sidebar a {
+  transition: color 0.18s ease, background 0.18s ease, box-shadow 0.2s ease;
+}
+.sidebar a:hover {
+  background: rgba(112,111,171,0.1);
+  box-shadow: inset -2px 0 0 #706fab;
+}
+
+
 .content {
   margin-left: var(--sidebar-width);
   flex: 1;
@@ -156,6 +208,7 @@ h1, h2, h3, h4, h5, h6 {
 .content h2 {
   font-size: 2.25rem;
   margin: 1.2em 0 0.5em;
+  text-align: left;
 }
 
 .content h3 {
@@ -178,8 +231,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .content h1 { font-size: 1.9rem; }
-  .content h2 { font-size: 1.4rem; }
-  .content h3 { font-size: 1.1rem; }
+  .content h2 { font-size: 1.4rem;}
+  .content h3 { font-size: 1.1rem;}
 }
 
 .external-links {
@@ -227,3 +280,23 @@ h1, h2, h3, h4, h5, h6 {
     min-width: 0;
   }
 }
+
+/* content card styling */
+.content {
+  background: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  padding: 40px 20px;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+  transition: color 0.3s ease;
+}
+.content h1:hover,
+.content h2:hover,
+.content h3:hover {
+  color: #706fab;
+}
+
