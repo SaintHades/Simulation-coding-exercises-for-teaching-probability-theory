@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Two-column layout */
 .container {
   display: flex;
-  width: 80%;
+  width: 90%;
   max-width: 1400px; 
   margin: 0 auto;
 }
@@ -59,7 +59,6 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar nav ul {
   display: flex;
   padding-top: 40px;
-  padding-right: 30px;
   flex-direction: column;
   gap: 35px; 
 }
