@@ -1,7 +1,7 @@
 /* Typography: use Georgia throughout the site */
 :root {
   --site-serif: Georgia, "Times New Roman", Times, serif;
-  --sidebar-width: clamp(160px, 16vw, 360px);
+  --sidebar-width: 240px; /* fixed width for sidebar */
 }
 
 html, body {
@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar {
   width: var(--sidebar-width);
   margin-bottom: 10px;
+  padding-right: 0;
 }
 
 .sidebar li {
@@ -79,11 +80,13 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   display: block;
   width: 100%;
-  text-align: left;
-  padding: 0px 0px;
+  box-sizing: border-box; 
+  text-align: right;
+  padding: 6px 0px; 
   transition: width 180ms ease;
-  font-size: 24px; 
+  font-size: 1rem;
   line-height: 1.2;
+  overflow-wrap: break-word;
 }
 
 .sidebar a:hover {
