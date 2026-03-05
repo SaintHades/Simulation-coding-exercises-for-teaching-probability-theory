@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: right;
   padding: 6px 12px; /* small right gap so text sits near right edge */ 
   transition: width 180ms ease;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   overflow-wrap: break-word;
 }
