@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Two-column layout */
 .container {
   display: flex;
-  width: 90%;          /* use full available width */
+  width: 100%;          /* use full available width */
   max-width: 1600px;    /* allow a wider layout */
   margin: 0 auto;
   padding: 0 20px;      /* some horizontal breathing room */
@@ -104,9 +104,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: inset -2px 0 0 #706fab;
 }
 
-/* Main content */
-
-/* animated sidebar gradient */
 @keyframes sidebarShift {
   0% { background-position: 0 0; }
   100% { background-position: 0 100%; }
@@ -139,8 +136,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  text-align: center;
+  align-items: flex-start; /* left-align all children */
+  text-align: left;        /* left-align text inside children */
   transition: margin-left 180ms ease;
   font-size: 18px; 
   line-height: 1.7;
