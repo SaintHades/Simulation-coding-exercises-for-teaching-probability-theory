@@ -9,15 +9,17 @@
 
 <div class="container">
 
-  <!-- Sidebar -->
+  <!-- sidebar -->
   <aside class="sidebar">
-    <ul>
-      <!-- Internal anchors -->
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#methods">Methods</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#conclusion">Conclusion</a></li>
-    </ul>
+<ul>
+  <li><a href="#motivation">Motivation</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#participants">Participants</a></li>
+  <li><a href="#design">Design</a></li>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#analysis">Analysis</a></li>
+  <li><a href="#conclusion">Takeaways</a></li>
+</ul>
   </aside>
 
   <!-- Main content -->
@@ -26,29 +28,79 @@
 
     <p>Alyssa Tallada, Jingjun Ni, Marguerite Church, Rihui Ling, Yunqi Zhang, Peter Chi (Mentor)</p>
 
+     <!-- links to other deliverables--> 
     <div class="external-links">
       <a href="https://github.com/SaintHades/Simulation-coding-exercises-for-teaching-probability-theory.git" target="_blank">GitHub Repo</a>
       <a href="https://your-report-link.com" target="_blank">Report</a>
       <a href="https://your-poster-link.com" target="_blank">Poster</a>
     </div>
 
-    <h2 id="introduction">Why Probability is Important</h2>
+    <!-- intro -->
+    <h2 id="motivation">Motivation</h2>
     <p>Probability is a core part of modern STEM education and everyday decision-making, yet many people find it confusing and unintuitive. Students often struggle with ideas like conditional probability, rare events, and long-run behavior: they may be able to plug numbers into formulas, but still feel unsure about what those formulas mean in real situations. This matters because probabilistic reasoning shows up in many important contexts, such as interpreting medical tests, evaluating risks, or judging the strength of data-driven claims. 
+    </p>
 
-    <h2 id="introduction">Bringing Code into the Classroom</h2>
-        <p>Traditional probability courses tend to emphasize symbolic derivations and hand-written problem sets, which build algebraic skills but do not always help students develop a clear mental picture of random processes.
-            In contrast, statistics and data science courses have increasingly adopted simulation-based, coding-centered approaches, where learners write short programs, generate many samples from a model, and use plots and summaries to “see’’ theoretical ideas in action. This difference motivates the need for careful, classroom-based evaluation of how coding and simulation actually affect students’ conceptual understanding of probability, beyond anecdotal enthusiasm or small, topic-specific case studies.Our project directly addresses this gap. We designed simulation-based coding exercises for several key probability topics and will embed them in a four-condition, full factorial experiment that compares a control group, a coding-only group, a handwritten-only group, and a coding+handwritten group. Within this design, we ask two related questions: (i) whether access to coding activities, in any form, leads to additional learning gains beyond traditional materials alone, and (ii) whether combining coding with handwritten work yields benefits beyond using either modality by itself. </p>
-</p>
+    <h2 id="approach">Approach</h2>
+    <p>Traditional probability courses tend to emphasize symbolic derivations and hand-written problem sets, which build algebraic skills but do not always help students develop a clear mental picture of random processes.
+        In contrast, statistics and data science courses have increasingly adopted simulation-based, coding-centered approaches, where learners write short programs, generate many samples from a model, and use plots and summaries to “see’’ theoretical ideas in action. This difference motivates the need for careful, classroom-based evaluation of how coding and simulation actually affect students’ conceptual understanding of probability, beyond anecdotal enthusiasm or small, topic-specific case studies.Our project directly addresses this gap. We designed simulation-based coding exercises for several key probability topics and will embed them in a four-condition, full factorial experiment that compares a control group, a coding-only group, a handwritten-only group, and a coding+handwritten group. Within this design, we ask two related questions: (i) whether access to coding activities, in any form, leads to additional learning gains beyond traditional materials alone, and (ii) whether combining coding with handwritten work yields benefits beyond using either modality by itself. </p>
+    </p>
 
-    <h2 id="methods">Our Experiment</h2>
+    <!-- participants -->
+    <h2 id="participants">Participants</h2>
     <p>We recruited participants from Data Science, Math, and Economics classes at UCSD.  Data collection took place during the first half of winter quarter. Selection of these courses aimed to target students with comparable quantitative backgrounds, ensuring a similar baseline level of mathematics and coding skills for completing the tasks in our study. We conducted participant outreach through class announcements and emails, distributed through the professors of each respective course. Students who chose to participate were first asked to complete an intake form administered through Google Forms. Background information such as name, email address, data science affiliation, math affiliation, class standing, related coursework, and sentiment regarding familiarity with statistics, Python, and Chebyshev’s inequality were collected from each participant.
-</p>
+    </p>
 
-    <h2 id="results">Results</h2>
-    <p>The coding groups showed higher learning gains on conceptual assessments...</p>
+    <!-- experimental design -->
+    <h2 id="design">Experimental Design</h2>
+    <p>Our study employs a four-condition, full factorial design to compare the effectiveness of different instructional approaches. The four treatment groups are as follows:</p>
 
+    <ul id="groups">
+        <li>No coding, no handwritten</li>
+        <li>Coding only</li>
+        <li>Handwritten only</li>
+        <li>Coding + handwritten</li>
+    </ul>
+
+    <p>Participants were randomly assigned to one of the four conditions, ensuring that each group had a comparable mix of students from different backgrounds and courses. Materials were administered through Gradescope, and all content focused on the topic of Chebyshev's Inequality, a concept which approximately 60% of students reported not being familiar with. Each participant took a "Final Assessment" after completing their assigned tasks, producing a quantitative score that served as the primary variable outcome to evaluate the differences in learning outcomes across each treatment condition.</p>
+
+    <!-- features -->
+    <h2 id="features">Model and Feature Engineering</h2>
+    <p>
+    To evaluate the impact of each section, we tested multiple linear regression models that compared the effects of the treatment groups to models including interaction effects. The primary variables were binary indicators representing whether a participant completed coding exercises, handwritten exercises, or both. In addition to modeling the individual contributions of each treatment, we included an interaction term between coding and handwritten work to test whether completing both activities produced additional learning gains beyond their separate effects.
+    </p>
+
+    <p>
+    Beyond treatment effects, we incorporated background information collected through the intake form. These responses included variables such as class standing, academic affiliation, and prior coursework in math or data science. For simplification of the analysis, we encoded and normalized these variables to standardize responses and reduce redundancy across features.
+    </p>
+
+    <p>
+    To avoid overfitting the model, we applied backward feature selection using ordinary least squares (OLS) regression with final score as the response variable. This process allowed us to remove predictors that did not meaningfully contribute to explaining variation in the outcome. OLS results revealed linearly dependent predictors within the design matrix, leading to the removal of certain features (such as class standing) from the final model.
+    </p>
+
+    <!-- analysis -->
+    <h2 id="analysis">Statistical Analysis</h2>
+    <p>
+    We compared these models using analysis of variance (ANOVA) tests to determine whether the interaction term significantly improved model fit relative to simpler additive models. This comparison was performed for both the raw final scores and an adjusted score version of the outcome variable. The ANOVA results indicated that including the interaction term did not significantly improve explanatory power in either case, suggesting that the combined treatment did not produce a statistically meaningful interaction effect within our sample.
+    </p>
+
+    <p>
+    Across these comparisons, the interaction between coding and handwritten work did not produce a statistically significant improvement in explanatory power. Similarly, models that grouped coding and handwritten work together did not significantly outperform models that treated them separately. These results suggest that, within the scope of our sample, combining coding and handwritten exercises did not produce a noticeable benefit beyond the individual treatments.
+    </p>
+
+    <div class="image-text-container">
+      <div class="image-wrapper">
+        <image src="backwards_selec.png" alt="Results of Backward Feature Selection" class="results-image">
+      </div>
+      <div class="image-caption">
+        <p>OLS regression results for the final model after backward feature selection.</p>
+      </div>
+    </div>
+
+    <!-- conclusion -->
     <h2 id="conclusion">Key Takeaways</h2>
-    <p>Simulation-based coding exercises can meaningfully improve student understanding... (reference the potential benefit of using a before and after assessment but the drawbacks of the time taken to complete the study</p>
+    <p>This study explored the efficacy of simulation-based coding exercises on improving students' understanding of probability compared to traditional handwritten approaches. One major limitation of this study is our sample size; with a smaller population size, the statistical power of our analysis is reduced. Future research could benefit from a larger sample size to enhance the generalizability of the findings and better assess the potential benefits of simulation-based learning interventions. Additionally, a before-and-after assessment design could provide a clearer picture of learning gains attributable to the treatments by controlling for baseline differences in understanding. Despite these limitations, our findings suggest that while coding exercises may offer some benefits, they do not appear to produce significant additional gains when combined with handwritten work. This highlights the need for further investigation into how different instructional modalities can best support student learning in probability and related subjects.
+    </p>
+
   </main>
 
 </div>
