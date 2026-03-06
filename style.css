@@ -1,7 +1,7 @@
-/* Typography: use Georgia throughout the site */
+
 :root {
   --site-serif: Georgia, "Times New Roman", Times, serif;
-  --sidebar-width: 240px; /* fixed width for sidebar */
+  --sidebar-width: 240px; 
 }
 
 html, body {
@@ -29,19 +29,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* Two-column layout */
+
 .container {
   display: flex;
-  width: 100%;          /* use full available width */
-  max-width: 1600px;    /* allow a wider layout */
+  width: 100%;          
+  max-width: 1600px;    
   margin: 0 auto;
-  padding: 0 20px;      /* some horizontal breathing room */
+  padding: 0 20px;      
 }
 
 #authors {
   font-size: 1.25rem;
   margin-bottom: 30px;
   text-align: center;
+  align-self: center;
 }
 
 .sidebar {
@@ -88,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   box-sizing: border-box; 
   text-align: right;
-  padding: 6px 8px; /* ensure text fits within sidebar */ 
+  padding: 6px 8px; 
   transition: width 180ms ease, color 0.18s ease, background 0.18s ease, box-shadow 0.2s ease;
   font-size: 1.1rem;
   line-height: 1.3;
