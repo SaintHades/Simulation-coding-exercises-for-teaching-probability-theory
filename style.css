@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   box-shadow: 2px 0 8px rgba(0,0,0,0.3);
   animation: sidebarShift 12s ease-in-out infinite alternate;
-  display: flex;
+  display: flex
   flex-direction: column;
   justify-content: flex-start; 
   align-items: flex-end; 
@@ -136,8 +136,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* left-align all children */
-  text-align: left;        /* left-align text inside children */
+  align-items: flex-start; 
+  text-align: left;        
   transition: margin-left 180ms ease;
   font-size: 18px; 
   line-height: 1.7;
@@ -192,6 +192,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .external-links {
+  align-self: center;
   margin: 10px 0;
   margin-bottom: 10px;
   display: flex;
