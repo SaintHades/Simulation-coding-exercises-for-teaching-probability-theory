@@ -253,11 +253,17 @@ h1, h2, h3, h4, h5, h6 {
   margin: 20px 0;
 }
 
-
+.eda{
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 .results-image {
   width: 100%;
   height: auto;
-  max-width: 550px;
+  max-width: 700px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   margin: 10px 0;
