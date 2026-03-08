@@ -1,8 +1,0 @@
-subquestion,mean_score,std_score,n,selection_reason
-1.1,0.825,0.1972385895926297,50,2nd lowest std
-1.2,0.872,0.25796693349247346,50,2nd highest mean
-2.3,0.98,0.1414213562373095,50,1st highest mean; 1st lowest std
-3.4,0.56,0.501426536422407,50,1st highest std
-3.5,0.4,0.4948716593053935,50,2nd highest std
-5.2,0.34,0.47851812069840655,50,2nd lowest mean
-5.4,0.3,0.4629100498862757,50,1st lowest mean
