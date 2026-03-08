@@ -144,64 +144,6 @@ This notebook fits models for hypothesis testing and saves analysis outputs unde
 
 ---
 
-<!-- ## 5) Hypotheses & What We Test -->
-
-<!-- We keep README minimal: **two hypotheses**, evaluated via model coefficients and model comparison.
-
-### Hypothesis 1 — Coding effect
-
-**H1:** Coding exercise performance is positively associated with final assessment performance.
-
-Operational check:
-
-* Fit a regression model and inspect the coding coefficient ( \beta_{\text{coding}} ).
-* Evidence for H1: ( \beta_{\text{coding}} > 0 ) with statistical support (p-value / CI).
-
-### Hypothesis 2 — Incremental value (model comparison)
-
-**H2:** Including coding-related predictors improves the model beyond alternatives (e.g., handwritten-only and/or baseline covariates).
-
-Operational check:
-
-* Compare a model **without** coding terms vs. a model **with** coding terms.
-* Report comparison using one or more:
-
-  * nested model test (if applicable)
-  * AIC/BIC
-  * validation performance (optional if implemented) -->
-
-<!-- --- -->
-
-<!-- ## 6) Model Definitions -->
-<!-- We use two primary model specifications.
-
-### Model 1 (core predictors; no intake covariates)
-
-We run the outcome (Y) in two versions:
-
-* `Y = final_score` (raw)
-* `Y = final_score_adj_conf` (confidence-adjusted)
-
-Predictors:
-
-* `X1 = handwritten_score` (0–1)
-* `X2 = coding_score` (0–1)
-* optional interaction: `X1 * X2`
-
-Example form:
-
-* `Y ~ handwritten_score + coding_score + handwritten_score:coding_score`
-
-### Model 2 (add intake covariates; adjusted/robustness)
-
-Adds intake-form covariates to Model 1:
-
-* `Y ~ handwritten_score + coding_score + interaction + [intake covariates]`
-
-If model selection is performed (e.g., p-value based trimming), the procedure and final selected set should be documented in `statstical_pipeline.ipynb`. -->
-
-<!-- --- -->
-
 ## 5) GitHub Pages
 
 This repo includes `index.md` and `_config.yml` for a lightweight GitHub Pages site (navigation + links).
@@ -218,7 +160,7 @@ This repo includes `index.md` and `_config.yml` for a lightweight GitHub Pages s
 
 We maintain a separate repo that contains the probability teaching materials (exercises/solutions/lesson notes).
 
-* Teaching materials repo: **https://github.com/peterbchi/codingprobsim25**
+> If you are intresting about this project, and want to see teaching materials we explored, please email: Peter Chi (pbchi@ucsd.edu).
 
 Relationship:
 
