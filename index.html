@@ -20,6 +20,7 @@
   <li><a href="#features">Features</a></li>
   <li><a href="#analysis">Analysis</a></li>
   <li><a href="#conclusion">Takeaways</a></li>
+  <!-- TODO -->
 </ul>
   </aside>
 
@@ -34,6 +35,7 @@
       <a href="https://github.com/SaintHades/Simulation-coding-exercises-for-teaching-probability-theory.git" target="_blank">GitHub Repo</a>
       <a href="https://your-report-link.com" target="_blank">Report</a>
       <a href="https://your-poster-link.com" target="_blank">Poster</a>
+      <!-- TODO -->
     </div>
 
     <!-- intro -->
@@ -66,116 +68,175 @@
 
     <p>Participants were randomly assigned to one of the four conditions, ensuring that each group had a comparable mix of students from different backgrounds and courses. Materials were administered through Gradescope, and all content focused on the topic of Chebyshev's Inequality, a concept which approximately 60% of students reported not being familiar with. Each participant took a "Final Assessment" after completing their assigned tasks, producing a quantitative score that served as the primary variable outcome to evaluate the differences in learning outcomes across each treatment condition.</p>
 
-        <h2 id="eda">Exploratory Data Analysis</h2>
-    <p>Before running formal statistical tests, we first explored the distribution of assessment scores across the four instructional groups.</p> 
+    <!-- Result -->
+  <section id="result">
+    <h2 id="result">Result</h2>
+    <p>
+      This section presents the main results for both raw final scores and confidence-adjusted final scores.
+      Exploratory plots show modest differences across groups, while the formal statistical tests suggest that
+      these differences are not statistically significant under the current sample.
+    </p>
 
-    <div class="image-text-container">
-      <div class="image-wrapper">
-        <img src="data/exploratory_data_analysis_outputs/Final Assessment Scores by Group.png" alt="Final Assessment Scores by Group" class="eda">
+    <div class="result-columns">
+      <!-- Final raw -->
+      <div class="result-column-box">
+        <h3>Final Score</h3>
+        <p class="result-column-summary">
+          The raw final score results show modest visual differences across groups, but the formal analyses do not detect statistically significant effects.
+        </p>
+
+        <div class="image-text-container">
+          <div class="image-wrapper">
+            <img
+              src="data/exploratory_data_analysis_outputs/Final Assessment Scores by Group.png"
+              alt="Final Assessment Scores by Group"
+              class="results-image"
+            />
+          </div>
+          <div class="image-caption">
+            <p>Final Assessment Scores by Group</p>
+          </div>
+          <div class="result-description">
+            <p>
+              This plot shows the distribution of raw final assessment scores across the four instructional groups.
+              Groups with structured engagement activities appear to perform slightly better overall, although the differences remain modest.
+            </p>
+          </div>
+        </div>
+
+        <div class="result-hypothesis-card">
+          <h4>Hypothesis: The interaction term does not add an additional effect (H<sub>0</sub>: β<sub>3</sub> = 0)</h4>
+          <p class="formula-text">
+            Model: β<sub>0</sub> + β<sub>1</sub>(coding) + β<sub>2</sub>(handwritten) + β<sub>3</sub>(coding × handwritten)
+          </p>
+
+          <div class="image-text-container">
+            <div class="image-wrapper">
+              <img
+                src="data/statistic_analysis_outputs/final_coef.png"
+                alt="Coefficient estimates for final score model"
+                class="results-image"
+              />
+            </div>
+            <div class="image-caption">
+              <p>Coefficient Estimates for Final Score Model</p>
+            </div>
+            <div class="result-description">
+              <p>
+                This coefficient table is used to evaluate the interaction term in the raw final score model.
+                The interaction effect is not statistically significant, suggesting no additional benefit from combining both activities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-hypothesis-card">
+          <h4>Hypothesis: Coding and handwritten exercises have equal effects (H<sub>0</sub>: β<sub>1</sub> = β<sub>2</sub>)</h4>
+          <p class="formula-text">
+            Reduced model: β<sub>0</sub> + β<sub>1</sub>(coding + handwritten) + β<sub>3</sub>(coding × handwritten)
+          </p>
+
+          <div class="image-text-container">
+            <div class="image-wrapper">
+              <img
+                src="data/statistic_analysis_outputs/anova_final.png"
+                alt="ANOVA results for final score"
+                class="results-image"
+              />
+            </div>
+            <div class="image-caption">
+              <p>ANOVA Comparison for Final Score Models</p>
+            </div>
+            <div class="result-description">
+              <p>
+                This ANOVA result compares the full and reduced models for raw final score.
+                The result suggests no meaningful difference between the effects of coding and handwritten exercises.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="image-caption">
-        <p>Final assessment scores by treatment group.</p>
+
+      <!-- Final adj -->
+      <div class="result-column-box">
+        <h3>Adjusted Final Score</h3>
+        <p class="result-column-summary">
+          The adjusted final score results follow a similar pattern, with slightly lower scores overall after accounting for confidence.
+        </p>
+
+        <div class="image-text-container">
+          <div class="image-wrapper">
+            <img
+              src="data/exploratory_data_analysis_outputs/Final Assessment Scores (Adjusted) by Group.png"
+              alt="Final Assessment Scores Adjusted by Group"
+              class="results-image"
+            />
+          </div>
+          <div class="image-caption">
+            <p>Final Assessment Scores (Adjusted) by Group</p>
+          </div>
+          <div class="result-description">
+            <p>
+              This plot shows the distribution of confidence-adjusted final scores across the four groups.
+              The adjusted scores are generally lower than the raw scores, but the overall group pattern remains similar.
+            </p>
+          </div>
+        </div>
+
+        <div class="result-hypothesis-card">
+          <h4>Hypothesis: The interaction term does not add an additional effect (H<sub>0</sub>: β<sub>3</sub> = 0)</h4>
+          <p class="formula-text">
+            Model: β<sub>0</sub> + β<sub>1</sub>(coding) + β<sub>2</sub>(handwritten) + β<sub>3</sub>(coding × handwritten)
+          </p>
+
+          <div class="image-text-container">
+            <div class="image-wrapper">
+              <img
+                src="data/statistic_analysis_outputs/adj_final_coef.png"
+                alt="Coefficient estimates for adjusted final score model"
+                class="results-image"
+              />
+            </div>
+            <div class="image-caption">
+              <p>Coefficient Estimates for Adjusted Final Score Model</p>
+            </div>
+            <div class="result-description">
+              <p>
+                This coefficient table is used to evaluate the interaction term in the adjusted final score model.
+                The interaction effect remains not statistically significant after accounting for confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-hypothesis-card">
+          <h4>Hypothesis: Coding and handwritten exercises have equal effects (H<sub>0</sub>: β<sub>1</sub> = β<sub>2</sub>)</h4>
+          <p class="formula-text">
+            Reduced model: β<sub>0</sub> + β<sub>1</sub>(coding + handwritten) + β<sub>3</sub>(coding × handwritten)
+          </p>
+
+          <div class="image-text-container">
+            <div class="image-wrapper">
+              <img
+                src="data/statistic_analysis_outputs/anova_final_adj.png"
+                alt="ANOVA results for adjusted final score"
+                class="results-image"
+              />
+            </div>
+            <div class="image-caption">
+              <p>ANOVA Comparison for Adjusted Final Score Models</p>
+            </div>
+            <div class="result-description">
+              <p>
+                This ANOVA result compares the full and reduced models for adjusted final score.
+                The result again suggests no meaningful difference between the effects of coding and handwritten exercises.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <p>
-    Overall, groups that completed structured engagement activities (Sections 2–4) tended to have slightly higher median scores than Section 1, where students did not complete coding or handwritten exercises. Section 4, which included both coding and handwritten work, showed relatively strong performance among higher scores, while Section 1 had a wider spread of results.
-    </p>
-
-    <div class="image-text-container">
-      <div class="image-wrapper">
-        <img src="data/exploratory_data_analysis_outputs/Final Assessment Scores (Adjusted) by Group.png" alt="Final Assessment Scores Adjusted by Group" class="eda">
-      </div>
-      <div class="image-caption">
-        <p>Adjusted final assessment scores by treatment group.</p>
-      </div>
-    </div>
-
-    <p>We also examined confidence-adjusted scores, which account for how confident students were in their answers. These adjusted scores were slightly lower across all groups, reflecting cases where students were confident but incorrect. The decrease was somewhat larger in Section 1, suggesting weaker alignment between confidence and correctness.
-    </p>
-
-    <p>
-    We also visualized the relationship between mean confidence and assessment scores to see how participants’ confidence aligned with their performance across groups (see figure below). These exploratory plots suggest potential differences, but formal statistical tests are needed to confirm significance.
-    </p>
-    
-    <div class="image-text-container">
-      <div class="image-wrapper">
-        <img src="data/exploratory_data_analysis_outputs/Calibration by Section Mean Score vs Confidence.png" alt="Confidence by Group" class="eda">
-      </div>
-      <div class="image-caption">
-        <p>Mean confidence versus assessment score by group.</p>
-      </div>
-    </div>
-
-    <p>While these patterns suggest some differences between instructional groups, EDA alone cannot determine whether they are statistically significant. The next section applies formal statistical tests to evaluate these differences.
-    </p>
-
-    <!-- features -->
-    <h2 id="features">Model and Feature Engineering</h2>
-    <p>
-    To evaluate the impact of each section, we tested multiple linear regression models that compared the effects of the treatment groups to models including interaction effects. The primary variables were binary indicators representing whether a participant completed coding exercises, handwritten exercises, or both. In addition to modeling the individual contributions of each treatment, we included an interaction term between coding and handwritten work to test whether completing both activities produced additional learning gains beyond their separate effects.
-    </p>
-
-    <p>
-    Beyond treatment effects, we incorporated background information collected through the intake form. These responses included variables such as class standing, academic affiliation, and prior coursework in math or data science. For simplification of the analysis, we encoded and normalized these variables to standardize responses and reduce redundancy across features.
-    To avoid overfitting the model, we applied backward feature selection using ordinary least squares (OLS) regression with final score as the response variable. This process allowed us to remove predictors that did not meaningfully contribute to explaining variation in the outcome. OLS results revealed linearly dependent predictors within the design matrix, leading to the removal of certain features (such as class standing) from the final model.
-    </p>
-
-    <p>
-  To improve our predictive model, we added features collected from the intake form, including both categorical and numerical variables. Categorical features (one-hot encoded) are: source of recruitment, DSC affiliation, math affiliation, academic year, and statistics courses taken. Numerical features (1–5 scale) include confidence in statistics skills, familiarity with Chebyshev’s inequality, and Python skill level.  
-  </p>
-  <p>
-  Feature naming conventions:
-  <ul>
-    <li><strong>Heard*</strong>: Source of recruitment</li>
-    <li><strong>DSC*</strong>: DSC affiliation</li>
-    <li><strong>MATH*</strong>: Math affiliation</li>
-    <li><strong>Year*</strong>: Academic year</li>
-    <li><strong>Stats*</strong>: Statistics courses taken</li>
-    <li><strong>stats_confidence</strong>: Confidence in statistics skills</li>
-    <li><strong>chebyshev_familiarity</strong>: Familiarity with Chebyshev’s inequality</li>
-    <li><strong>python_skill_level</strong>: Python skill level</li>
-  </ul>
-
-    <!-- analysis -->
-  <h2 id="analysis">Statistical Analysis</h2>
-  <p>
-  We tested whether coding exercises and handwritten exercises had different effects on learning outcomes using ANOVA. Two models were compared for both the raw and adjusted final scores: one treating coding and handwritten exercises separately with an interaction term, and another combining the two treatments.
-  </p>
-
-  <p>
-  The first ANOVA test for the raw final score compared the model <strong>β0 + β1(coding) + β2(handwritten) + β3(interaction)</strong> versus <strong>β0 + β1(coding + handwritten) + β3(interaction)</strong>. The resulting p-value was 0.453, which is greater than 0.05. This means we fail to reject the null hypothesis that coding exercises and handwritten exercises have equal effects on learning outcomes.
-  </p>
-
-<div class="image-text-container">
-  <div class="image-wrapper">
-    <img src="data/statistic_analysis_outputs/final_anova.png" alt="ANOVA Results for Final Score" class="results-image">
-  </div>
-  <div class="image-caption">
-    <p>ANOVA results comparing separate vs combined coding and handwritten exercises for final scores.</p>
-  </div>
-</div>
-
-<p>
-The second hypothesis tested whether the interaction term <strong>β3</strong> contributed to predicting the final score. For the raw scores, the interaction coefficient had a p-value of 0.886, which is far above 0.05. Therefore, we fail to reject the null hypothesis that β3 = 0, indicating that the interaction term (coding * handwritten) does not have a statistically significant effect on predicting final scores.
-</p>
-
-<p>
-For the adjusted final score, we repeated the ANOVA test comparing the same two models: <strong>β0 + β1(coding) + β2(handwritten) + β3(interaction)</strong> versus <strong>β0 + β1(coding + handwritten) + β3(interaction)</strong>. The p-value was 0.673, larger than the 0.453 from the unadjusted score, providing even stronger evidence in favor of retaining the null hypothesis that coding and handwritten exercises have equal effects.
-</p>
-
-<div class="image-text-container">
-  <div class="image-wrapper">
-    <img src="data/statistic_analysis_outputs/final_adj_anova.png" alt="ANOVA Results for Adjusted Final Score" class="results-image">
-  </div>
-  <div class="image-caption">
-    <p>ANOVA results for adjusted final scores, accounting for reported confidence.</p>
-  </div>
-</div>
-
-<p>
-Overall, both raw and adjusted analyses indicate that completing both types of exercises does not produce a measurable benefit beyond the individual treatments, and there is no statistically significant interaction effect between coding and handwritten exercises.
-</p>
+  </section>
 
 <!-- conclusion -->
 <h2 id="conclusion">Key Takeaways</h2>
