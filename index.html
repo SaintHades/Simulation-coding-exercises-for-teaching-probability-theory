@@ -16,6 +16,7 @@
   <li><a href="#approach">Approach</a></li>
   <li><a href="#participants">Participants</a></li>
   <li><a href="#design">Design</a></li>
+  <li><a href="#eda">EDA </a></li>
   <li><a href="#features">Features</a></li>
   <li><a href="#analysis">Analysis</a></li>
   <li><a href="#conclusion">Takeaways</a></li>
@@ -47,8 +48,10 @@
 
     <!-- participants -->
     <h2 id="participants">Participants</h2>
-    <p>We recruited participants from Data Science, Math, and Economics classes at UCSD.  Data collection took place during the first half of winter quarter. Selection of these courses aimed to target students with comparable quantitative backgrounds, ensuring a similar baseline level of mathematics and coding skills for completing the tasks in our study. We conducted participant outreach through class announcements and emails, distributed through the professors of each respective course. Students who chose to participate were first asked to complete an intake form administered through Google Forms. Background information such as name, email address, data science affiliation, math affiliation, class standing, related coursework, and sentiment regarding familiarity with statistics, Python, and Chebyshev’s inequality were collected from each participant.
+    <p>We recruited participants from Data Science, Math, and Economics classes at UCSD.  Data collection took place during the first half of winter quarter. Selection of these courses aimed to target students with comparable quantitative backgrounds, ensuring a similar baseline level of mathematics and coding skills for completing the tasks in our study. We conducted participant outreach through class announcements and emails, distributed through the professors of each respective course. Students who chose to participate were first asked to complete an intake form administered through Google Forms. Background information such as name, email address, data science affiliation, math affiliation, class standing, related coursework, and sentiment regarding familiarity with statistics, Python, and Chebyshev’s inequality were collected from each participant. 
     </p>
+
+
 
     <!-- experimental design -->
     <h2 id="design">Experimental Design</h2>
@@ -63,6 +66,50 @@
 
     <p>Participants were randomly assigned to one of the four conditions, ensuring that each group had a comparable mix of students from different backgrounds and courses. Materials were administered through Gradescope, and all content focused on the topic of Chebyshev's Inequality, a concept which approximately 60% of students reported not being familiar with. Each participant took a "Final Assessment" after completing their assigned tasks, producing a quantitative score that served as the primary variable outcome to evaluate the differences in learning outcomes across each treatment condition.</p>
 
+        <h2 id="eda">Exploratory Data Analysis</h2>
+    <p>Before running formal statistical tests, we first explored the distribution of assessment scores across the four instructional groups.</p> 
+
+    <div class="image-text-container">
+      <div class="image-wrapper">
+        <img src="images/score_by_group.png" alt="Final Assessment Scores by Group" class="eda">
+      </div>
+      <div class="image-caption">
+        <p>Final assessment scores by treatment group.</p>
+      </div>
+    </div>
+
+    <p>
+    Overall, groups that completed structured engagement activities (Sections 2–4) tended to have slightly higher median scores than Section 1, where students did not complete coding or handwritten exercises. Section 4, which included both coding and handwritten work, showed relatively strong performance among higher scores, while Section 1 had a wider spread of results.
+    </p>
+
+    <div class="image-text-container">
+      <div class="image-wrapper">
+        <img src="images/adj_score by_group.png" alt="Final Assessment Scores Adjusted by Group" class="eda">
+      </div>
+      <div class="image-caption">
+        <p>Adjusted final assessment scores by treatment group.</p>
+      </div>
+    </div>
+
+    <p>We also examined confidence-adjusted scores, which account for how confident students were in their answers. These adjusted scores were slightly lower across all groups, reflecting cases where students were confident but incorrect. The decrease was somewhat larger in Section 1, suggesting weaker alignment between confidence and correctness.
+    </p>
+
+    <p>
+    We also visualized the relationship between mean confidence and assessment scores to see how participants’ confidence aligned with their performance across groups (see figure below). These exploratory plots suggest potential differences, but formal statistical tests are needed to confirm significance.
+    </p>
+    
+    <div class="image-text-container">
+      <div class="image-wrapper">
+        <img src="images/mean_score_confidence.png" alt="Confidence by Group" class="eda">
+      </div>
+      <div class="image-caption">
+        <p>Mean confidence versus assessment score by group.</p>
+      </div>
+    </div>
+
+    <p>While these patterns suggest some differences between instructional groups, EDA alone cannot determine whether they are statistically significant. The next section applies formal statistical tests to evaluate these differences.
+    </p>
+
     <!-- features -->
     <h2 id="features">Model and Feature Engineering</h2>
     <p>
@@ -71,37 +118,80 @@
 
     <p>
     Beyond treatment effects, we incorporated background information collected through the intake form. These responses included variables such as class standing, academic affiliation, and prior coursework in math or data science. For simplification of the analysis, we encoded and normalized these variables to standardize responses and reduce redundancy across features.
-    </p>
-
-    <p>
     To avoid overfitting the model, we applied backward feature selection using ordinary least squares (OLS) regression with final score as the response variable. This process allowed us to remove predictors that did not meaningfully contribute to explaining variation in the outcome. OLS results revealed linearly dependent predictors within the design matrix, leading to the removal of certain features (such as class standing) from the final model.
     </p>
 
+    <p>
+  To improve our predictive model, we added features collected from the intake form, including both categorical and numerical variables. Categorical features (one-hot encoded) are: source of recruitment, DSC affiliation, math affiliation, academic year, and statistics courses taken. Numerical features (1–5 scale) include confidence in statistics skills, familiarity with Chebyshev’s inequality, and Python skill level.  
+  </p>
+  <p>
+  Feature naming conventions:
+  <ul>
+    <li><strong>Heard*</strong>: Source of recruitment</li>
+    <li><strong>DSC*</strong>: DSC affiliation</li>
+    <li><strong>MATH*</strong>: Math affiliation</li>
+    <li><strong>Year*</strong>: Academic year</li>
+    <li><strong>Stats*</strong>: Statistics courses taken</li>
+    <li><strong>stats_confidence</strong>: Confidence in statistics skills</li>
+    <li><strong>chebyshev_familiarity</strong>: Familiarity with Chebyshev’s inequality</li>
+    <li><strong>python_skill_level</strong>: Python skill level</li>
+  </ul>
+
     <!-- analysis -->
-    <h2 id="analysis">Statistical Analysis</h2>
-    <p>
-    We compared these models using analysis of variance (ANOVA) tests to determine whether the interaction term significantly improved model fit relative to simpler additive models. This comparison was performed for both the raw final scores and an adjusted score version of the outcome variable. The ANOVA results indicated that including the interaction term did not significantly improve explanatory power in either case, suggesting that the combined treatment did not produce a statistically meaningful interaction effect within our sample.
-    </p>
+  <h2 id="analysis">Statistical Analysis</h2>
+  <p>
+  We tested whether coding exercises and handwritten exercises had different effects on learning outcomes using ANOVA. For reference, "Year 1–4" indicates students' class standing, and "Stats 1–3" represents prior coursework (e.g., introductory probability, intermediate statistics, or applied statistics courses). Two models were compared for both the raw and adjusted final scores: one treating coding and handwritten exercises separately with an interaction term, and another combining the two treatments.
+  </p>
 
-    <p>
-    Across these comparisons, the interaction between coding and handwritten work did not produce a statistically significant improvement in explanatory power. Similarly, models that grouped coding and handwritten work together did not significantly outperform models that treated them separately. These results suggest that, within the scope of our sample, combining coding and handwritten exercises did not produce a noticeable benefit beyond the individual treatments.
-    </p>
+  <p>
+  The first ANOVA test for the raw final score compared the model <strong>β0 + β1(coding) + β2(handwritten) + β3(interaction)</strong> versus <strong>β0 + β1(coding + handwritten) + β3(interaction)</strong>. The resulting p-value was 0.453, which is greater than 0.05. This means we fail to reject the null hypothesis that coding exercises and handwritten exercises have equal effects on learning outcomes.
+  </p>
 
-    <div class="image-text-container">
-      <div class="image-wrapper">
-        <img src="images/backwards.png" alt="Results of Backward Feature Selection" class="results-image">
-      </div>
-      <div class="image-caption">
-        <p>OLS regression results for the final model after backward feature selection.</p>
-      </div>
-    </div>
+<div class="image-text-container">
+  <div class="image-wrapper">
+    <img src="images/anova_final.png" alt="ANOVA Results for Final Score" class="results-image">
+  </div>
+  <div class="image-caption">
+    <p>ANOVA results comparing separate vs combined coding and handwritten exercises for final scores.</p>
+  </div>
+</div>
 
-    <!-- conclusion -->
-    <h2 id="conclusion">Key Takeaways</h2>
-    <p>This study explored the efficacy of simulation-based coding exercises on improving students' understanding of probability compared to traditional handwritten approaches. One major limitation of this study is our sample size; with a smaller population size, the statistical power of our analysis is reduced. Future research could benefit from a larger sample size to enhance the generalizability of the findings and better assess the potential benefits of simulation-based learning interventions. Additionally, a before-and-after assessment design could provide a clearer picture of learning gains attributable to the treatments by controlling for baseline differences in understanding. Despite these limitations, our findings suggest that while coding exercises may offer some benefits, they do not appear to produce significant additional gains when combined with handwritten work. This highlights the need for further investigation into how different instructional modalities can best support student learning in probability and related subjects.
-    </p>
+<p>
+The second hypothesis tested whether the interaction term <strong>β3</strong> contributed to predicting the final score. For the raw scores, the interaction coefficient had a p-value of 0.886, which is far above 0.05. Therefore, we fail to reject the null hypothesis that β3 = 0, indicating that the interaction term (coding * handwritten) does not have a statistically significant effect on predicting final scores.
+</p>
 
-  </main>
+<p>
+For the adjusted final score, we repeated the ANOVA test comparing the same two models: <strong>β0 + β1(coding) + β2(handwritten) + β3(interaction)</strong> versus <strong>β0 + β1(coding + handwritten) + β3(interaction)</strong>. The p-value was 0.673, larger than the 0.453 from the unadjusted score, providing even stronger evidence in favor of retaining the null hypothesis that coding and handwritten exercises have equal effects.
+</p>
+
+<div class="image-text-container">
+  <div class="image-wrapper">
+    <img src="images/anova_final_adj.png" alt="ANOVA Results for Adjusted Final Score" class="results-image">
+  </div>
+  <div class="image-caption">
+    <p>ANOVA results for adjusted final scores, accounting for reported confidence.</p>
+  </div>
+</div>
+
+<p>
+Overall, both raw and adjusted analyses indicate that completing both types of exercises does not produce a measurable benefit beyond the individual treatments, and there is no statistically significant interaction effect between coding and handwritten exercises.
+</p>
+
+<!-- conclusion -->
+<h2 id="conclusion">Key Takeaways</h2>
+<p>
+This study explored the efficacy of simulation-based coding exercises on improving students' understanding of probability compared to traditional handwritten approaches. Across both exploratory data analysis and formal statistical tests, we found that students who completed structured engagement activities—whether coding, handwritten, or both—tended to perform slightly better than students who did not complete exercises. However, ANOVA tests for both raw and confidence-adjusted scores indicated that coding and handwritten exercises had statistically equivalent effects, and there was no significant interaction effect between the two treatments. In other words, completing both types of exercises did not provide measurable additional benefit beyond the individual treatments.  
+</p>
+
+<p>
+One limitation of this study is the relatively small sample size, which reduces the statistical power of our analyses and may limit generalizability. Future research could address this by including a larger and more diverse participant pool. Additionally, incorporating a before-and-after assessment design could better capture individual learning gains by controlling for baseline knowledge differences. 
+</p>
+
+<p>
+Our findings also highlight the importance of considering students’ confidence in their responses. Adjusted score analyses showed that some variation in performance may relate to over- or under-confidence rather than actual mastery, suggesting that instructional strategies could also focus on calibrating confidence alongside skill development. Overall, while coding exercises are a promising tool for active engagement, this study suggests that their benefits may be similar to traditional handwritten approaches, and further research is needed to determine how different instructional modalities can optimally support learning in probability and related subjects.
+</p>
+
+</main>
 
 </div>
 
