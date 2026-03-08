@@ -238,6 +238,186 @@
     </div>
   </section>
 
+<section id="discussion">
+  <h2 id="discussion">Discussion</h2>
+  <p>
+    This section interprets the main patterns observed in the study beyond the formal hypothesis tests.
+    Overall, the results suggest only modest differences across sections, while the adjusted-score analysis
+    and the intake-feature model provide additional insight into how students performed and evaluated their own understanding.
+  </p>
+
+  <!-- Highlighted card: why adjusted score matters -->
+  <div class="discussion-card">
+    <h3>Confidence Calibration and Why We Focus on Adjusted Scores</h3>
+
+    <div class="image-text-container">
+      <div class="image-wrapper">
+        <img
+          src="data/exploratory_data_analysis_outputs/Calibration by Section Mean Score vs Confidence.png"
+          alt="Calibration by Section Mean Score vs Confidence"
+          class="discussion-wide-image"
+        />
+      </div>
+      <div class="image-caption">
+        <p>Calibration by Section: Mean Score vs Confidence</p>
+      </div>
+      <div class="figure-note">
+        <p>
+          Mean score generally increases with reported confidence across all sections.
+          Students who report higher confidence tend to be more likely to answer correctly.
+        </p>
+      </div>
+    
+      <p style="margin-bottom: 0px;">
+        This pattern helps explain why the adjusted score is useful in addition to the raw score.
+        The raw score captures correctness alone, while the adjusted score also reflects whether confidence is aligned with correctness.
+        For the discussion, this makes the adjusted score especially useful because it provides a broader view of student understanding,
+        including an element of self-evaluation rather than correctness alone.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main body -->
+  <div class="discussion-body">
+    <div class="discussion-section">
+      <h3>Model with Intake Features</h3>
+      <p>
+        To better understand variation in adjusted final score, we compared the original adjusted-score model
+        based only on section-related terms with a richer model that also incorporates intake-form variables.
+        This comparison helps show whether student background characteristics explain additional variation in performance.
+      </p>
+
+      <div class="image-text-container">
+        <div class="image-wrapper">
+          <img
+            src="data/statistic_analysis_outputs/adj_final_model.png"
+            alt="Adjusted final score model without intake features"
+            class="results-image"
+          />
+        </div>
+        <div class="image-caption">
+          <p>Adjusted Final Score Model without Intake Features</p>
+        </div>
+        <div class="figure-note">
+          <p>
+            This baseline model includes only section-related predictors.
+            Its explanatory power is limited, with R-squared = 0.008 and adjusted R-squared = -0.056.
+          </p>
+        </div>
+      </div>
+
+      <div class="image-text-container">
+        <div class="image-wrapper">
+          <img
+            src="data/statistic_analysis_outputs/intake_adj_final_model.png"
+            alt="Adjusted final score model with intake features"
+            class="results-image"
+          />
+        </div>
+        <div class="image-caption">
+          <p>Adjusted Final Score Model with Intake Features</p>
+        </div>
+        <div class="figure-note">
+          <p>
+            After adding intake-form variables, the model fit improves substantially.
+            R-squared increases to 0.444 and adjusted R-squared increases to 0.243.
+          </p>
+        </div>
+      </div>
+
+      <div class="discussion-text">
+        <p>
+          Comparing these two models suggests that intake-form variables add meaningful explanatory value.
+          The adjusted R-squared increases from -0.056 to 0.243, while the R-squared increases from 0.008 to 0.444.
+          The overall model significance also improves, with the Prob(F-statistic) dropping from 0.943 in the baseline model
+          to 0.0305 in the intake-feature model. Taken together, these results suggest that student background characteristics
+          explain adjusted final score more effectively than section assignment alone.
+        </p>
+      </div>
+
+      <div class="image-text-container">
+        <div class="image-wrapper">
+          <img
+            src="data/statistic_analysis_outputs/intake_adj_final_coef.png"
+            alt="Coefficients for predicting adjusted final score with intake features"
+            class="discussion-wide-image"
+          />
+        </div>
+        <div class="image-caption">
+          <p>Coefficient Estimates for the Adjusted Final Score Model with Intake Features</p>
+        </div>
+        <div class="figure-note">
+          <p>
+            The coefficient table expands the model by showing how section indicators and intake variables relate to adjusted final score.
+            The feature guide below summarizes the shortened variable names used in the table.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature-legend-box">
+        <h4>Feature Name Guide</h4>
+        <p class="feature-legend-intro">
+          The coefficient table uses shortened variable names. The groups below explain what each label refers to.
+        </p>
+
+        <div class="feature-group-grid">
+          <div class="feature-group">
+            <h5>Activity Terms</h5>
+            <p><strong>coding</strong>: students in sections with coding exercises</p>
+            <p><strong>handwritten</strong>: students in sections with handwritten exercises</p>
+            <p><strong>coding_handwritten</strong>: interaction term for students assigned both activities</p>
+          </div>
+
+          <div class="feature-group">
+            <h5>DSC Affiliation</h5>
+            <p><strong>DSC_major</strong>: students who reported being a Data Science major</p>
+            <p><strong>DSC_minor</strong>: students who reported being a Data Science minor</p>
+          </div>
+
+          <div class="feature-group">
+            <h5>Academic Year</h5>
+            <p><strong>Year_1</strong>: first-year students</p>
+            <p><strong>Year_2</strong>: second-year students</p>
+            <p><strong>Year_3</strong>: third-year students</p>
+            <p><strong>Year_4</strong>: fourth-year students</p>
+            <p><strong>Year_transfer_1</strong>: third-year student, first-year transfer</p>
+            <p><strong>Year_transfer_2</strong>: fourth-year student, second-year transfer</p>
+          </div>
+
+          <div class="feature-group">
+            <h5>Statistics Background</h5>
+            <p><strong>Stats_1</strong>: taken at least one introductory statistics course</p>
+            <p><strong>Stats_2</strong>: advanced introductory probability or statistics course</p>
+            <p><strong>Stats_3</strong>: basic introductory probability or statistics course</p>
+            <p><strong>Reference group</strong>: no reported background in this category</p>
+          </div>
+        </div>
+      </div>
+        <p>
+          Overall, the coefficient table suggests that student background characteristics contribute more to explaining adjusted final score
+          than section assignment alone. Academic year, prior statistics preparation, and DSC affiliation appear more informative than the
+          section-based indicators, while the coding, handwritten, and interaction terms remain relatively small. This is consistent with the
+          earlier results, where section-based differences were present descriptively but remained modest in magnitude.
+        </p>
+    </div>
+
+    <div class="discussion-section">
+      <h3>Limitations</h3>
+      <p>
+        Several limitations should be considered when interpreting these findings. First, the sample size was relatively small,
+        which limits the ability to detect subtle differences across instructional conditions. Second, the assessment combined
+        different types of probability tasks, so advantages from one learning mode may have been diluted when all questions were
+        aggregated into a single overall score.
+      </p>
+      <p>
+        In addition, confidence reporting likely varies across students. Some students may use the confidence scale more aggressively,
+        while others may report confidence more conservatively. As a result, the adjusted score is informative and useful for discussion,
+        but it is also influenced by differences in how students evaluate and report their own certainty.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- conclusion -->
 <h2 id="conclusion">Key Takeaways</h2>
 <p>
