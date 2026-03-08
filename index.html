@@ -1,440 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Simulation Coding Exercises</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulation Coding Exercises for Teaching Probability Theory</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="container">
+  <div class="page-shell">
 
-  <!-- sidebar -->
-  <aside class="sidebar">
-<ul>
-  <li><a href="#motivation">Motivation</a></li>
-  <li><a href="#approach">Approach</a></li>
-  <li><a href="#participants">Participants</a></li>
-  <li><a href="#design">Design</a></li>
-  <li><a href="#eda">EDA </a></li>
-  <li><a href="#features">Features</a></li>
-  <li><a href="#analysis">Analysis</a></li>
-  <li><a href="#conclusion">Takeaways</a></li>
-  <!-- TODO -->
-</ul>
-  </aside>
+    <!-- Main content -->
+    <main class="content">
 
-  <!-- Main content -->
-  <main class="content">
-    <h1>Simulation Coding Exercises for Teaching Probability Theory</h1>
-
-    <p id="authors">Alyssa Tallada, Jingjun Ni, Marguerite Church, Rihui Ling, Yunqi Zhang, Peter Chi (Mentor)</p>
-
-     <!-- links to other deliverables--> 
-    <div class="external-links">
-      <a href="https://github.com/SaintHades/Simulation-coding-exercises-for-teaching-probability-theory.git" target="_blank">GitHub Repo</a>
-      <a href="https://your-report-link.com" target="_blank">Report</a>
-      <a href="https://your-poster-link.com" target="_blank">Poster</a>
-      <!-- TODO -->
-    </div>
-
-    <!-- intro -->
-    <h2 id="motivation">Motivation</h2>
-    <p>Probability is a core part of modern STEM education and everyday decision-making, yet many people find it confusing and unintuitive. Students often struggle with ideas like conditional probability, rare events, and long-run behavior: they may be able to plug numbers into formulas, but still feel unsure about what those formulas mean in real situations. This matters because probabilistic reasoning shows up in many important contexts, such as interpreting medical tests, evaluating risks, or judging the strength of data-driven claims. 
-    </p>
-
-    <h2 id="approach">Approach</h2>
-    <p>Traditional probability courses tend to emphasize symbolic derivations and hand-written problem sets, which build algebraic skills but do not always help students develop a clear mental picture of random processes.
-        In contrast, statistics and data science courses have increasingly adopted simulation-based, coding-centered approaches, where learners write short programs, generate many samples from a model, and use plots and summaries to “see’’ theoretical ideas in action. This difference motivates the need for careful, classroom-based evaluation of how coding and simulation actually affect students’ conceptual understanding of probability, beyond anecdotal enthusiasm or small, topic-specific case studies.Our project directly addresses this gap. We designed simulation-based coding exercises for several key probability topics and will embed them in a four-condition, full factorial experiment that compares a control group, a coding-only group, a handwritten-only group, and a coding+handwritten group. Within this design, we ask two related questions: (i) whether access to coding activities, in any form, leads to additional learning gains beyond traditional materials alone, and (ii) whether combining coding with handwritten work yields benefits beyond using either modality by itself. </p>
-    </p>
-
-    <!-- participants -->
-    <h2 id="participants">Participants</h2>
-    <p>We recruited participants from Data Science, Math, and Economics classes at UCSD.  Data collection took place during the first half of winter quarter. Selection of these courses aimed to target students with comparable quantitative backgrounds, ensuring a similar baseline level of mathematics and coding skills for completing the tasks in our study. We conducted participant outreach through class announcements and emails, distributed through the professors of each respective course. Students who chose to participate were first asked to complete an intake form administered through Google Forms. Background information such as name, email address, data science affiliation, math affiliation, class standing, related coursework, and sentiment regarding familiarity with statistics, Python, and Chebyshev’s inequality were collected from each participant. 
-    </p>
-
-
-
-    <!-- experimental design -->
-    <h2 id="design">Experimental Design</h2>
-    <p>Our study employs a four-condition, full factorial design to compare the effectiveness of different instructional approaches. The four treatment groups are as follows:</p>
-
-    <ul id="groups">
-        <li>No coding, no handwritten</li>
-        <li>Coding only</li>
-        <li>Handwritten only</li>
-        <li>Coding + handwritten</li>
-    </ul>
-
-    <p>Participants were randomly assigned to one of the four conditions, ensuring that each group had a comparable mix of students from different backgrounds and courses. Materials were administered through Gradescope, and all content focused on the topic of Chebyshev's Inequality, a concept which approximately 60% of students reported not being familiar with. Each participant took a "Final Assessment" after completing their assigned tasks, producing a quantitative score that served as the primary variable outcome to evaluate the differences in learning outcomes across each treatment condition.</p>
-
-    <!-- Result -->
-  <section id="result">
-    <h2 id="result">Result</h2>
-    <p>
-      This section presents the main results for both raw final scores and confidence-adjusted final scores.
-      Exploratory plots show modest differences across groups, while the formal statistical tests suggest that
-      these differences are not statistically significant under the current sample.
-    </p>
-
-    <div class="result-columns">
-      <!-- Final raw -->
-      <div class="result-column-box">
-        <h3>Final Score</h3>
-        <p class="result-column-summary">
-          The raw final score results show modest visual differences across groups, but the formal analyses do not detect statistically significant effects.
+      <header class="hero">
+        <p class="eyebrow">DSC 180 Capstone Project</p>
+        <h1>Simulation Coding Exercises for Teaching Probability Theory</h1>
+        <p id="authors">
+          Alyssa Tallada, Jingjun Ni, Marguerite Church, Rihui Ling, Yunqi Zhang, Peter Chi (Mentor)
         </p>
 
-        <div class="image-text-container">
-          <div class="image-wrapper">
-            <img
-              src="data/exploratory_data_analysis_outputs/Final Assessment Scores by Group.png"
-              alt="Final Assessment Scores by Group"
-              class="results-image"
-            />
+        <nav class="top-links" aria-label="Project links">
+          <a class="is-active" href="https://github.com/SaintHades/Simulation-coding-exercises-for-teaching-probability-theory.git" target="_blank">Repository</a>
+          <a href="https://your-report-link.com" target="_blank">Report</a>
+          <a href="https://your-poster-link.com" target="_blank">Poster</a>
+        </nav>
+      </header>
+
+      <section id="motivation">
+        <h2>Motivation</h2>
+        <p>
+          Probability is a core part of modern STEM education and everyday decision-making, yet many people find it confusing and unintuitive. Students often struggle with ideas like conditional probability, rare events, and long-run behavior: they may be able to plug numbers into formulas, but still feel unsure about what those formulas mean in real situations. This matters because probabilistic reasoning shows up in many important contexts, such as interpreting medical tests, evaluating risks, or judging the strength of data-driven claims.
+        </p>
+      </section>
+
+      <section id="research-goal">
+        <h2>Research Goal</h2>
+        <p>
+          Traditional probability courses tend to emphasize symbolic derivations and hand-written problem sets, which build algebraic skills but do not always help students develop a clear mental picture of random processes. In contrast, statistics and data science courses have increasingly adopted simulation-based, coding-centered approaches, where learners write short programs, generate many samples from a model, and use plots and summaries to “see” theoretical ideas in action.
+        </p>
+        <p>
+          This difference motivates the need for careful, classroom-based evaluation of how coding and simulation actually affect students’ conceptual understanding of probability, beyond anecdotal enthusiasm or small, topic-specific case studies. Our project directly addresses this gap. We designed simulation-based coding exercises for several key probability topics and embedded them in a four-condition, full-factorial experiment that compares a control group, a coding-only group, a handwritten-only group, and a coding+handwritten group.
+        </p>
+        <p>
+          Within this design, we ask two related questions: (i) whether access to coding activities, in any form, leads to additional learning gains beyond traditional materials alone, and (ii) whether combining coding with handwritten work yields benefits beyond using either modality by itself.
+        </p>
+      </section>
+
+      <section id="study-sample">
+        <h2>Participants and Recruitment</h2>
+        <p>
+          We recruited participants from Data Science, Math, and Economics classes at UCSD. Data collection took place during the first half of winter quarter. Selection of these courses aimed to target students with comparable quantitative backgrounds, ensuring a similar baseline level of mathematics and coding skills for completing the tasks in our study.
+        </p>
+        <p>
+          We conducted participant outreach through class announcements and emails distributed through the professors of each respective course. Students who chose to participate were first asked to complete an intake form administered through Google Forms. Background information such as name, email address, data science affiliation, math affiliation, class standing, related coursework, and self-reported familiarity with statistics, Python, and Chebyshev’s inequality was collected from each participant.
+        </p>
+      </section>
+
+      <section id="study-design">
+        <h2>Study Design</h2>
+        <p>
+          Our study employs a four-condition, full-factorial design to compare the effectiveness of different instructional approaches. The four treatment groups are as follows:
+        </p>
+
+        <ul id="groups">
+          <li>No coding, no handwritten</li>
+          <li>Coding only</li>
+          <li>Handwritten only</li>
+          <li>Coding + handwritten</li>
+        </ul>
+
+        <p>
+          Participants were randomly assigned to one of the four conditions, ensuring that each group had a comparable mix of students from different backgrounds and courses. Materials were administered through Gradescope, and all content focused on the topic of Chebyshev’s inequality, a concept that approximately 60% of students reported not being familiar with. Each participant took a final assessment after completing their assigned tasks, producing a quantitative score that served as the primary outcome variable for evaluating differences in learning outcomes across treatment conditions.
+        </p>
+      </section>
+
+      <section id="eda">
+        <h2>Exploratory Data Analysis</h2>
+        <p>
+          Before fitting formal statistical models, we examined the score distributions and overall performance patterns across instructional groups. These exploratory views provide context for the later regression and ANOVA results by showing the relative spread, central tendency, and consistency of student outcomes under each treatment condition.
+        </p>
+      </section>
+
+      <section id="features">
+        <h2>Feature Construction</h2>
+        <p>
+          In addition to treatment assignment, we considered intake-form variables describing student background and prior preparation. These features allow us to investigate whether differences in adjusted final score are better explained by instructional condition alone or by a broader set of student characteristics.
+        </p>
+      </section>
+
+      <section id="findings">
+        <h2>Main Findings</h2>
+        <p>
+          This section presents the primary results for both raw final scores and confidence-adjusted final scores. Exploratory plots show modest differences across groups, while the formal statistical tests suggest that these differences are not statistically significant under the current sample.
+        </p>
+
+        <div class="result-columns">
+
+          <!-- Raw final -->
+          <div class="result-column-box">
+            <h3>Raw Final Score</h3>
+            <p class="result-column-summary">
+              The raw final score results show modest visual differences across groups, but the formal analyses do not detect statistically significant effects.
+            </p>
+
+            <div class="image-text-container">
+              <div class="image-wrapper">
+                <img
+                  src="data/exploratory_data_analysis_outputs/Final Assessment Scores by Group.png"
+                  alt="Final Assessment Scores by Group"
+                  class="results-image"
+                />
+              </div>
+              <div class="image-caption">
+                <p>Distribution of raw final assessment scores across the four instructional groups.</p>
+              </div>
+              <div class="result-description">
+                <p>
+                  Groups with structured engagement activities appear to perform slightly better overall, although the differences remain modest.
+                </p>
+              </div>
+            </div>
+
+            <div class="result-hypothesis-card">
+              <h4>Interaction Effect Test</h4>
+              <p class="formula-text">
+                H<sub>0</sub>: β<sub>3</sub> = 0 &nbsp;&nbsp;|&nbsp;&nbsp;
+                Model: β<sub>0</sub> + β<sub>1</sub>(coding) + β<sub>2</sub>(handwritten) + β<sub>3</sub>(coding × handwritten)
+              </p>
+
+              <div class="image-text-container">
+                <div class="image-wrapper">
+                  <img
+                    src="data/statistic_analysis_outputs/final_coef.png"
+                    alt="Coefficient estimates for raw final score model"
+                    class="results-image"
+                  />
+                </div>
+                <div class="image-caption">
+                  <p>Coefficient estimates for the raw final score model.</p>
+                </div>
+                <div class="result-description">
+                  <p>
+                    The interaction term is not statistically significant, suggesting no measurable additional benefit from combining both activities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="result-hypothesis-card">
+              <h4>Equal-Effect Comparison: Coding vs. Handwritten</h4>
+              <p class="formula-text">
+                H<sub>0</sub>: β<sub>1</sub> = β<sub>2</sub> &nbsp;&nbsp;|&nbsp;&nbsp;
+                Reduced model: β<sub>0</sub> + β<sub>1</sub>(coding + handwritten) + β<sub>3</sub>(coding × handwritten)
+              </p>
+
+              <div class="image-text-container">
+                <div class="image-wrapper">
+                  <img
+                    src="data/statistic_analysis_outputs/anova_final.png"
+                    alt="ANOVA results for raw final score"
+                    class="results-image"
+                  />
+                </div>
+                <div class="image-caption">
+                  <p>ANOVA comparison between the full and reduced raw-score models.</p>
+                </div>
+                <div class="result-description">
+                  <p>
+                    The result suggests no meaningful difference between the estimated effects of coding and handwritten exercises on raw final score.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="image-caption">
-            <p>Final Assessment Scores by Group</p>
+
+          <!-- Adjusted final -->
+          <div class="result-column-box">
+            <h3>Confidence-Adjusted Final Score</h3>
+            <p class="result-column-summary">
+              The adjusted final score results follow a similar pattern, with slightly lower scores overall after accounting for confidence.
+            </p>
+
+            <div class="image-text-container">
+              <div class="image-wrapper">
+                <img
+                  src="data/exploratory_data_analysis_outputs/Final Assessment Scores (Adjusted) by Group.png"
+                  alt="Adjusted final assessment scores by group"
+                  class="results-image"
+                />
+              </div>
+              <div class="image-caption">
+                <p>Distribution of confidence-adjusted final assessment scores across the four groups.</p>
+              </div>
+              <div class="result-description">
+                <p>
+                  The adjusted scores are generally lower than the raw scores, but the overall group pattern remains similar.
+                </p>
+              </div>
+            </div>
+
+            <div class="result-hypothesis-card">
+              <h4>Interaction Effect Test</h4>
+              <p class="formula-text">
+                H<sub>0</sub>: β<sub>3</sub> = 0 &nbsp;&nbsp;|&nbsp;&nbsp;
+                Model: β<sub>0</sub> + β<sub>1</sub>(coding) + β<sub>2</sub>(handwritten) + β<sub>3</sub>(coding × handwritten)
+              </p>
+
+              <div class="image-text-container">
+                <div class="image-wrapper">
+                  <img
+                    src="data/statistic_analysis_outputs/adj_final_coef.png"
+                    alt="Coefficient estimates for adjusted final score model"
+                    class="results-image"
+                  />
+                </div>
+                <div class="image-caption">
+                  <p>Coefficient estimates for the adjusted final score model.</p>
+                </div>
+                <div class="result-description">
+                  <p>
+                    The interaction effect remains not statistically significant after accounting for confidence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="result-hypothesis-card">
+              <h4>Equal-Effect Comparison: Coding vs. Handwritten</h4>
+              <p class="formula-text">
+                H<sub>0</sub>: β<sub>1</sub> = β<sub>2</sub> &nbsp;&nbsp;|&nbsp;&nbsp;
+                Reduced model: β<sub>0</sub> + β<sub>1</sub>(coding + handwritten) + β<sub>3</sub>(coding × handwritten)
+              </p>
+
+              <div class="image-text-container">
+                <div class="image-wrapper">
+                  <img
+                    src="data/statistic_analysis_outputs/anova_final_adj.png"
+                    alt="ANOVA results for adjusted final score"
+                    class="results-image"
+                  />
+                </div>
+                <div class="image-caption">
+                  <p>ANOVA comparison between the full and reduced adjusted-score models.</p>
+                </div>
+                <div class="result-description">
+                  <p>
+                    The result again suggests no meaningful difference between the effects of coding and handwritten exercises.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="result-description">
-            <p>
-              This plot shows the distribution of raw final assessment scores across the four instructional groups.
-              Groups with structured engagement activities appear to perform slightly better overall, although the differences remain modest.
+
+        </div>
+      </section>
+
+      <section id="interpretation">
+        <h2>Interpretation and Discussion</h2>
+        <p>
+          This section interprets the main patterns observed in the study beyond the formal hypothesis tests. Overall, the results suggest only modest differences across sections, while the adjusted-score analysis and the intake-feature model provide additional insight into how students performed and evaluated their own understanding.
+        </p>
+
+        <div class="discussion-card">
+          <h3>Why Confidence-Adjusted Scores Matter</h3>
+
+          <div class="image-text-container">
+            <div class="image-wrapper">
+              <img
+                src="data/exploratory_data_analysis_outputs/Calibration by Section Mean Score vs Confidence.png"
+                alt="Calibration by section: mean score versus confidence"
+                class="discussion-wide-image"
+              />
+            </div>
+            <div class="image-caption">
+              <p>Calibration by section: mean score generally increases with reported confidence.</p>
+            </div>
+            <div class="figure-note">
+              <p>
+                Students who report higher confidence also tend to be more likely to answer correctly, suggesting that confidence contains useful information about calibration and self-evaluation.
+              </p>
+            </div>
+
+            <p style="margin-bottom: 0;">
+              This pattern helps explain why the adjusted score is useful in addition to the raw score. The raw score captures correctness alone, while the adjusted score also reflects whether confidence is aligned with correctness. In this sense, the adjusted score provides a broader view of student understanding by incorporating an element of self-evaluation rather than correctness alone.
             </p>
           </div>
         </div>
 
-        <div class="result-hypothesis-card">
-          <h4>Hypothesis: The interaction term does not add an additional effect (H<sub>0</sub>: β<sub>3</sub> = 0)</h4>
-          <p class="formula-text">
-            Model: β<sub>0</sub> + β<sub>1</sub>(coding) + β<sub>2</sub>(handwritten) + β<sub>3</sub>(coding × handwritten)
-          </p>
+        <div class="discussion-body">
 
-          <div class="image-text-container">
-            <div class="image-wrapper">
-              <img
-                src="data/statistic_analysis_outputs/final_coef.png"
-                alt="Coefficient estimates for final score model"
-                class="results-image"
-              />
-            </div>
-            <div class="image-caption">
-              <p>Coefficient Estimates for Final Score Model</p>
-            </div>
-            <div class="result-description">
-              <p>
-                This coefficient table is used to evaluate the interaction term in the raw final score model.
-                The interaction effect is not statistically significant, suggesting no additional benefit from combining both activities.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="result-hypothesis-card">
-          <h4>Hypothesis: Coding and handwritten exercises have equal effects (H<sub>0</sub>: β<sub>1</sub> = β<sub>2</sub>)</h4>
-          <p class="formula-text">
-            Reduced model: β<sub>0</sub> + β<sub>1</sub>(coding + handwritten) + β<sub>3</sub>(coding × handwritten)
-          </p>
-
-          <div class="image-text-container">
-            <div class="image-wrapper">
-              <img
-                src="data/statistic_analysis_outputs/anova_final.png"
-                alt="ANOVA results for final score"
-                class="results-image"
-              />
-            </div>
-            <div class="image-caption">
-              <p>ANOVA Comparison for Final Score Models</p>
-            </div>
-            <div class="result-description">
-              <p>
-                This ANOVA result compares the full and reduced models for raw final score.
-                The result suggests no meaningful difference between the effects of coding and handwritten exercises.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Final adj -->
-      <div class="result-column-box">
-        <h3>Adjusted Final Score</h3>
-        <p class="result-column-summary">
-          The adjusted final score results follow a similar pattern, with slightly lower scores overall after accounting for confidence.
-        </p>
-
-        <div class="image-text-container">
-          <div class="image-wrapper">
-            <img
-              src="data/exploratory_data_analysis_outputs/Final Assessment Scores (Adjusted) by Group.png"
-              alt="Final Assessment Scores Adjusted by Group"
-              class="results-image"
-            />
-          </div>
-          <div class="image-caption">
-            <p>Final Assessment Scores (Adjusted) by Group</p>
-          </div>
-          <div class="result-description">
+          <div class="discussion-section">
+            <h3>Added Value of Intake Features</h3>
             <p>
-              This plot shows the distribution of confidence-adjusted final scores across the four groups.
-              The adjusted scores are generally lower than the raw scores, but the overall group pattern remains similar.
+              To better understand variation in adjusted final score, we compared the original adjusted-score model based only on section-related terms with a richer model that also incorporates intake-form variables. This comparison helps show whether student background characteristics explain additional variation in performance.
+            </p>
+
+            <div class="image-text-container">
+              <div class="image-wrapper">
+                <img
+                  src="data/statistic_analysis_outputs/adj_final_model.png"
+                  alt="Adjusted final score model without intake features"
+                  class="results-image"
+                />
+              </div>
+              <div class="image-caption">
+                <p>Baseline adjusted-score model using only section-related predictors.</p>
+              </div>
+              <div class="figure-note">
+                <p>
+                  This baseline model has limited explanatory power, with R-squared = 0.008 and adjusted R-squared = -0.056.
+                </p>
+              </div>
+            </div>
+
+            <div class="image-text-container">
+              <div class="image-wrapper">
+                <img
+                  src="data/statistic_analysis_outputs/intake_adj_final_model.png"
+                  alt="Adjusted final score model with intake features"
+                  class="results-image"
+                />
+              </div>
+              <div class="image-caption">
+                <p>Expanded adjusted-score model including intake-form variables.</p>
+              </div>
+              <div class="figure-note">
+                <p>
+                  After adding intake-form variables, the model fit improves substantially. R-squared increases to 0.444 and adjusted R-squared increases to 0.243.
+                </p>
+              </div>
+            </div>
+
+            <div class="discussion-text">
+              <p>
+                Comparing these two models suggests that intake-form variables add meaningful explanatory value. The adjusted R-squared increases from -0.056 to 0.243, while the R-squared increases from 0.008 to 0.444. The overall model significance also improves, with the Prob(F-statistic) dropping from 0.943 in the baseline model to 0.0305 in the intake-feature model. Taken together, these results suggest that student background characteristics explain adjusted final score more effectively than section assignment alone.
+              </p>
+            </div>
+
+            <div class="image-text-container">
+              <div class="image-wrapper">
+                <img
+                  src="data/statistic_analysis_outputs/intake_adj_final_coef.png"
+                  alt="Coefficient estimates for adjusted final score model with intake features"
+                  class="discussion-wide-image"
+                />
+              </div>
+              <div class="image-caption">
+                <p>Coefficient estimates for the adjusted-score model with intake features.</p>
+              </div>
+              <div class="figure-note">
+                <p>
+                  The coefficient table shows how section indicators and intake variables relate to adjusted final score. The feature guide below explains the shortened variable names used in the model output.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-legend-box">
+              <h4>Feature Name Guide</h4>
+              <p class="feature-legend-intro">
+                The coefficient table uses shortened variable names. The groups below explain what each label refers to.
+              </p>
+
+              <div class="feature-group-grid">
+                <div class="feature-group">
+                  <h5>Activity Terms</h5>
+                  <p><strong>coding</strong>: students in sections with coding exercises</p>
+                  <p><strong>handwritten</strong>: students in sections with handwritten exercises</p>
+                  <p><strong>coding_handwritten</strong>: interaction term for students assigned both activities</p>
+                </div>
+
+                <div class="feature-group">
+                  <h5>DSC Affiliation</h5>
+                  <p><strong>DSC_major</strong>: students who reported being a Data Science major</p>
+                  <p><strong>DSC_minor</strong>: students who reported being a Data Science minor</p>
+                </div>
+
+                <div class="feature-group">
+                  <h5>Academic Year</h5>
+                  <p><strong>Year_1</strong>: first-year students</p>
+                  <p><strong>Year_2</strong>: second-year students</p>
+                  <p><strong>Year_3</strong>: third-year students</p>
+                  <p><strong>Year_4</strong>: fourth-year students</p>
+                  <p><strong>Year_transfer_1</strong>: third-year student, first-year transfer</p>
+                  <p><strong>Year_transfer_2</strong>: fourth-year student, second-year transfer</p>
+                </div>
+
+                <div class="feature-group">
+                  <h5>Statistics Background</h5>
+                  <p><strong>Stats_1</strong>: taken at least one introductory statistics course</p>
+                  <p><strong>Stats_2</strong>: advanced introductory probability or statistics course</p>
+                  <p><strong>Stats_3</strong>: basic introductory probability or statistics course</p>
+                  <p><strong>Reference group</strong>: no reported background in this category</p>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              Overall, the coefficient table suggests that student background characteristics contribute more to explaining adjusted final score than section assignment alone. Academic year, prior statistics preparation, and DSC affiliation appear more informative than the section-based indicators, while the coding, handwritten, and interaction terms remain relatively small. This is consistent with the earlier results, where section-based differences were present descriptively but remained modest in magnitude.
+            </p>
+          </div>
+
+          <div class="discussion-section">
+            <h3>Study Limitations</h3>
+            <p>
+              Several limitations should be considered when interpreting these findings. First, the sample size was relatively small, which limits the ability to detect subtle differences across instructional conditions. Second, the assessment combined different types of probability tasks, so advantages from one learning mode may have been diluted when all questions were aggregated into a single overall score.
+            </p>
+            <p>
+              In addition, confidence reporting likely varies across students. Some students may use the confidence scale more aggressively, while others may report confidence more conservatively. As a result, the adjusted score is informative and useful for discussion, but it is also influenced by differences in how students evaluate and report their own certainty.
             </p>
           </div>
         </div>
+      </section>
 
-        <div class="result-hypothesis-card">
-          <h4>Hypothesis: The interaction term does not add an additional effect (H<sub>0</sub>: β<sub>3</sub> = 0)</h4>
-          <p class="formula-text">
-            Model: β<sub>0</sub> + β<sub>1</sub>(coding) + β<sub>2</sub>(handwritten) + β<sub>3</sub>(coding × handwritten)
-          </p>
-
-          <div class="image-text-container">
-            <div class="image-wrapper">
-              <img
-                src="data/statistic_analysis_outputs/adj_final_coef.png"
-                alt="Coefficient estimates for adjusted final score model"
-                class="results-image"
-              />
-            </div>
-            <div class="image-caption">
-              <p>Coefficient Estimates for Adjusted Final Score Model</p>
-            </div>
-            <div class="result-description">
-              <p>
-                This coefficient table is used to evaluate the interaction term in the adjusted final score model.
-                The interaction effect remains not statistically significant after accounting for confidence.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="result-hypothesis-card">
-          <h4>Hypothesis: Coding and handwritten exercises have equal effects (H<sub>0</sub>: β<sub>1</sub> = β<sub>2</sub>)</h4>
-          <p class="formula-text">
-            Reduced model: β<sub>0</sub> + β<sub>1</sub>(coding + handwritten) + β<sub>3</sub>(coding × handwritten)
-          </p>
-
-          <div class="image-text-container">
-            <div class="image-wrapper">
-              <img
-                src="data/statistic_analysis_outputs/anova_final_adj.png"
-                alt="ANOVA results for adjusted final score"
-                class="results-image"
-              />
-            </div>
-            <div class="image-caption">
-              <p>ANOVA Comparison for Adjusted Final Score Models</p>
-            </div>
-            <div class="result-description">
-              <p>
-                This ANOVA result compares the full and reduced models for adjusted final score.
-                The result again suggests no meaningful difference between the effects of coding and handwritten exercises.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section id="discussion">
-  <h2 id="discussion">Discussion</h2>
-  <p>
-    This section interprets the main patterns observed in the study beyond the formal hypothesis tests.
-    Overall, the results suggest only modest differences across sections, while the adjusted-score analysis
-    and the intake-feature model provide additional insight into how students performed and evaluated their own understanding.
-  </p>
-
-  <!-- Highlighted card: why adjusted score matters -->
-  <div class="discussion-card">
-    <h3>Confidence Calibration and Why We Focus on Adjusted Scores</h3>
-
-    <div class="image-text-container">
-      <div class="image-wrapper">
-        <img
-          src="data/exploratory_data_analysis_outputs/Calibration by Section Mean Score vs Confidence.png"
-          alt="Calibration by Section Mean Score vs Confidence"
-          class="discussion-wide-image"
-        />
-      </div>
-      <div class="image-caption">
-        <p>Calibration by Section: Mean Score vs Confidence</p>
-      </div>
-      <div class="figure-note">
+      <section id="takeaways">
+        <h2>Key Takeaways</h2>
         <p>
-          Mean score generally increases with reported confidence across all sections.
-          Students who report higher confidence tend to be more likely to answer correctly.
+          This study explored the efficacy of simulation-based coding exercises in improving students’ understanding of probability compared to traditional handwritten approaches. Across both exploratory analysis and formal statistical tests, we found that students who completed structured engagement activities—whether coding, handwritten, or both—tended to perform slightly better than students who did not complete exercises. However, ANOVA tests for both raw and confidence-adjusted scores indicated that coding and handwritten exercises had statistically equivalent effects, and there was no significant interaction effect between the two treatments.
         </p>
+
+        <p>
+          One limitation of this study is the relatively small sample size, which reduces the statistical power of our analyses and may limit generalizability. Future research could address this by including a larger and more diverse participant pool. Additionally, incorporating a before-and-after assessment design could better capture individual learning gains by controlling for baseline knowledge differences.
+        </p>
+
+        <p>
+          Our findings also highlight the importance of considering students’ confidence in their responses. Adjusted score analyses showed that some variation in performance may relate to over- or under-confidence rather than actual mastery, suggesting that instructional strategies could also focus on calibrating confidence alongside skill development. Overall, while coding exercises are a promising tool for active engagement, this study suggests that their benefits may be similar to traditional handwritten approaches, and further research is needed to determine how different instructional modalities can optimally support learning in probability and related subjects.
+        </p>
+      </section>
+
+    </main>
+
+    <!-- Right-side navigation -->
+    <aside class="side-nav" aria-label="Section navigation">
+      <div class="side-nav-inner">
+        <p class="side-nav-label">On this page</p>
+        <nav class="section-nav">
+          <a href="#motivation">Motivation</a>
+          <a href="#research-goal">Research Goal</a>
+          <a href="#study-sample">Participants</a>
+          <a href="#study-design">Study Design</a>
+          <a href="#eda">EDA</a>
+          <a href="#features">Features</a>
+          <a href="#findings">Findings</a>
+          <a href="#interpretation">Discussion</a>
+          <a href="#takeaways">Takeaways</a>
+        </nav>
       </div>
-    
-      <p style="margin-bottom: 0px;">
-        This pattern helps explain why the adjusted score is useful in addition to the raw score.
-        The raw score captures correctness alone, while the adjusted score also reflects whether confidence is aligned with correctness.
-        For the discussion, this makes the adjusted score especially useful because it provides a broader view of student understanding,
-        including an element of self-evaluation rather than correctness alone.
-      </p>
-    </div>
+    </aside>
+
   </div>
-
-  <!-- Main body -->
-  <div class="discussion-body">
-    <div class="discussion-section">
-      <h3>Model with Intake Features</h3>
-      <p>
-        To better understand variation in adjusted final score, we compared the original adjusted-score model
-        based only on section-related terms with a richer model that also incorporates intake-form variables.
-        This comparison helps show whether student background characteristics explain additional variation in performance.
-      </p>
-
-      <div class="image-text-container">
-        <div class="image-wrapper">
-          <img
-            src="data/statistic_analysis_outputs/adj_final_model.png"
-            alt="Adjusted final score model without intake features"
-            class="results-image"
-          />
-        </div>
-        <div class="image-caption">
-          <p>Adjusted Final Score Model without Intake Features</p>
-        </div>
-        <div class="figure-note">
-          <p>
-            This baseline model includes only section-related predictors.
-            Its explanatory power is limited, with R-squared = 0.008 and adjusted R-squared = -0.056.
-          </p>
-        </div>
-      </div>
-
-      <div class="image-text-container">
-        <div class="image-wrapper">
-          <img
-            src="data/statistic_analysis_outputs/intake_adj_final_model.png"
-            alt="Adjusted final score model with intake features"
-            class="results-image"
-          />
-        </div>
-        <div class="image-caption">
-          <p>Adjusted Final Score Model with Intake Features</p>
-        </div>
-        <div class="figure-note">
-          <p>
-            After adding intake-form variables, the model fit improves substantially.
-            R-squared increases to 0.444 and adjusted R-squared increases to 0.243.
-          </p>
-        </div>
-      </div>
-
-      <div class="discussion-text">
-        <p>
-          Comparing these two models suggests that intake-form variables add meaningful explanatory value.
-          The adjusted R-squared increases from -0.056 to 0.243, while the R-squared increases from 0.008 to 0.444.
-          The overall model significance also improves, with the Prob(F-statistic) dropping from 0.943 in the baseline model
-          to 0.0305 in the intake-feature model. Taken together, these results suggest that student background characteristics
-          explain adjusted final score more effectively than section assignment alone.
-        </p>
-      </div>
-
-      <div class="image-text-container">
-        <div class="image-wrapper">
-          <img
-            src="data/statistic_analysis_outputs/intake_adj_final_coef.png"
-            alt="Coefficients for predicting adjusted final score with intake features"
-            class="discussion-wide-image"
-          />
-        </div>
-        <div class="image-caption">
-          <p>Coefficient Estimates for the Adjusted Final Score Model with Intake Features</p>
-        </div>
-        <div class="figure-note">
-          <p>
-            The coefficient table expands the model by showing how section indicators and intake variables relate to adjusted final score.
-            The feature guide below summarizes the shortened variable names used in the table.
-          </p>
-        </div>
-      </div>
-
-      <div class="feature-legend-box">
-        <h4>Feature Name Guide</h4>
-        <p class="feature-legend-intro">
-          The coefficient table uses shortened variable names. The groups below explain what each label refers to.
-        </p>
-
-        <div class="feature-group-grid">
-          <div class="feature-group">
-            <h5>Activity Terms</h5>
-            <p><strong>coding</strong>: students in sections with coding exercises</p>
-            <p><strong>handwritten</strong>: students in sections with handwritten exercises</p>
-            <p><strong>coding_handwritten</strong>: interaction term for students assigned both activities</p>
-          </div>
-
-          <div class="feature-group">
-            <h5>DSC Affiliation</h5>
-            <p><strong>DSC_major</strong>: students who reported being a Data Science major</p>
-            <p><strong>DSC_minor</strong>: students who reported being a Data Science minor</p>
-          </div>
-
-          <div class="feature-group">
-            <h5>Academic Year</h5>
-            <p><strong>Year_1</strong>: first-year students</p>
-            <p><strong>Year_2</strong>: second-year students</p>
-            <p><strong>Year_3</strong>: third-year students</p>
-            <p><strong>Year_4</strong>: fourth-year students</p>
-            <p><strong>Year_transfer_1</strong>: third-year student, first-year transfer</p>
-            <p><strong>Year_transfer_2</strong>: fourth-year student, second-year transfer</p>
-          </div>
-
-          <div class="feature-group">
-            <h5>Statistics Background</h5>
-            <p><strong>Stats_1</strong>: taken at least one introductory statistics course</p>
-            <p><strong>Stats_2</strong>: advanced introductory probability or statistics course</p>
-            <p><strong>Stats_3</strong>: basic introductory probability or statistics course</p>
-            <p><strong>Reference group</strong>: no reported background in this category</p>
-          </div>
-        </div>
-      </div>
-        <p>
-          Overall, the coefficient table suggests that student background characteristics contribute more to explaining adjusted final score
-          than section assignment alone. Academic year, prior statistics preparation, and DSC affiliation appear more informative than the
-          section-based indicators, while the coding, handwritten, and interaction terms remain relatively small. This is consistent with the
-          earlier results, where section-based differences were present descriptively but remained modest in magnitude.
-        </p>
-    </div>
-
-    <div class="discussion-section">
-      <h3>Limitations</h3>
-      <p>
-        Several limitations should be considered when interpreting these findings. First, the sample size was relatively small,
-        which limits the ability to detect subtle differences across instructional conditions. Second, the assessment combined
-        different types of probability tasks, so advantages from one learning mode may have been diluted when all questions were
-        aggregated into a single overall score.
-      </p>
-      <p>
-        In addition, confidence reporting likely varies across students. Some students may use the confidence scale more aggressively,
-        while others may report confidence more conservatively. As a result, the adjusted score is informative and useful for discussion,
-        but it is also influenced by differences in how students evaluate and report their own certainty.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- conclusion -->
-<h2 id="conclusion">Key Takeaways</h2>
-<p>
-This study explored the efficacy of simulation-based coding exercises on improving students' understanding of probability compared to traditional handwritten approaches. Across both exploratory data analysis and formal statistical tests, we found that students who completed structured engagement activities—whether coding, handwritten, or both—tended to perform slightly better than students who did not complete exercises. However, ANOVA tests for both raw and confidence-adjusted scores indicated that coding and handwritten exercises had statistically equivalent effects, and there was no significant interaction effect between the two treatments. In other words, completing both types of exercises did not provide measurable additional benefit beyond the individual treatments.  
-</p>
-
-<p>
-One limitation of this study is the relatively small sample size, which reduces the statistical power of our analyses and may limit generalizability. Future research could address this by including a larger and more diverse participant pool. Additionally, incorporating a before-and-after assessment design could better capture individual learning gains by controlling for baseline knowledge differences. 
-</p>
-
-<p>
-Our findings also highlight the importance of considering students’ confidence in their responses. Adjusted score analyses showed that some variation in performance may relate to over- or under-confidence rather than actual mastery, suggesting that instructional strategies could also focus on calibrating confidence alongside skill development. Overall, while coding exercises are a promising tool for active engagement, this study suggests that their benefits may be similar to traditional handwritten approaches, and further research is needed to determine how different instructional modalities can optimally support learning in probability and related subjects.
-</p>
-
-</main>
-
-</div>
 
 </body>
 </html>
