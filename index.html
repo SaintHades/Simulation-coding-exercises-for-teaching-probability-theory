@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simulation Coding Exercises for Teaching Probability Theory</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="gloable.js" defer></script>
 </head>
 <body>
 
@@ -15,79 +16,162 @@
 
       <header class="hero">
         <p class="eyebrow">DSC 180 Capstone Project</p>
+
         <h1>Simulation Coding Exercises for Teaching Probability Theory</h1>
-        <p id="authors">
-          Alyssa Tallada, Jingjun Ni, Marguerite Church, Rihui Ling, Yunqi Zhang, Peter Chi (Mentor)
-        </p>
+
+        <div class="publication-authors">
+          <span class="author-block">
+            <a href="https://github.com/altilapia" target="_blank">Alyssa Tallada</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://github.com/245959084" target="_blank">Jingjun Ni</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://github.com/machurch" target="_blank">Marguerite Church</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://github.com/SaintHades" target="_blank">Rihui Ling</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://github.com/yuz227" target="_blank">Yunqi Zhang</a><sup>1</sup>,
+          </span>
+          
+        </div>
+
+        <div class="publication-authors affiliation-line">
+          <span class="author-block"><sup>1</sup>University of California San Diego</span>
+        </div>
+
+        <div class="publication-authors mentor-line">
+          <span class="author-block">
+            Mentor: <a href="https://github.com/peterbchi" target="_blank">Peter Chi</a><sup>1</sup>
+          </span>
+        </div>
+
+        <div class="hero-summary">
+          <p>
+            A classroom-based study on whether simulation coding exercises improve conceptual learning in probability, compared with handwritten and mixed-modality approaches.
+          </p>
+        </div>
+
+        <div class="hero-meta">
+          <span>Full factorial study</span>
+          <span>UCSD classroom study</span>
+          <span>Chebyshev’s inequality</span>
+        </div>
 
         <nav class="top-links" aria-label="Project links">
-          <a class="is-active" href="https://github.com/SaintHades/Simulation-coding-exercises-for-teaching-probability-theory.git" target="_blank">Repository</a>
-          <a href="https://your-report-link.com" target="_blank">Report</a>
-          <a href="https://your-poster-link.com" target="_blank">Poster</a>
+          <a href="https://github.com/SaintHades/Simulation-coding-exercises-for-teaching-probability-theory.git" target="_blank" rel="noopener noreferrer">Repository</a>
+          <a href="https://your-report-link.com" target="_blank" rel="noopener noreferrer">Report</a>
+          <a href="https://your-poster-link.com" target="_blank" rel="noopener noreferrer">Poster</a>
         </nav>
       </header>
 
       <section id="motivation">
         <h2>Motivation</h2>
         <p>
-          Probability is a core part of modern STEM education and everyday decision-making, yet many people find it confusing and unintuitive. Students often struggle with ideas like conditional probability, rare events, and long-run behavior: they may be able to plug numbers into formulas, but still feel unsure about what those formulas mean in real situations. This matters because probabilistic reasoning shows up in many important contexts, such as interpreting medical tests, evaluating risks, or judging the strength of data-driven claims.
+          Probability is a foundational topic in STEM education and plays an important role in everyday decision-making, yet many students find it unintuitive and difficult to learn. Concepts such as conditional probability, rare events, and long-run behavior are often introduced through formulas and symbolic manipulation, which can make it difficult for students to build an intuitive understanding of what these ideas mean in practice.
+        </p>
+        <p>
+          This challenge matters beyond the classroom. Probabilistic reasoning is essential in contexts such as interpreting medical tests, evaluating uncertainty, and making sense of data-driven claims. Because of this, improving how probability is taught is important not only for academic learning, but also for helping students apply quantitative reasoning in real-world situations.
         </p>
       </section>
 
       <section id="research-goal">
         <h2>Research Goal</h2>
         <p>
-          Traditional probability courses tend to emphasize symbolic derivations and hand-written problem sets, which build algebraic skills but do not always help students develop a clear mental picture of random processes. In contrast, statistics and data science courses have increasingly adopted simulation-based, coding-centered approaches, where learners write short programs, generate many samples from a model, and use plots and summaries to “see” theoretical ideas in action.
+          Traditional probability instruction often emphasizes derivations and handwritten problem solving, which help students practice formal reasoning but may not always support intuitive understanding. In contrast, simulation-based and coding-centered activities allow students to generate repeated samples, visualize outcomes, and observe theoretical ideas in action.
         </p>
         <p>
-          This difference motivates the need for careful, classroom-based evaluation of how coding and simulation actually affect students’ conceptual understanding of probability, beyond anecdotal enthusiasm or small, topic-specific case studies. Our project directly addresses this gap. We designed simulation-based coding exercises for several key probability topics and embedded them in a four-condition, full-factorial experiment that compares a control group, a coding-only group, a handwritten-only group, and a coding+handwritten group.
+          Our project explores whether these simulation-based coding exercises can serve as an effective teaching tool for probability. To study this, we developed instructional materials for key probability topics and evaluated them in a four-condition, full-factorial experiment comparing a control group, a coding-only group, a handwritten-only group, and a coding + handwritten group.
         </p>
         <p>
-          Within this design, we ask two related questions: (i) whether access to coding activities, in any form, leads to additional learning gains beyond traditional materials alone, and (ii) whether combining coding with handwritten work yields benefits beyond using either modality by itself.
+          More specifically, we ask whether coding activities lead to improved learning outcomes relative to traditional materials, and whether combining coding with handwritten work provides additional benefit beyond using either approach alone.
         </p>
       </section>
 
       <section id="study-sample">
         <h2>Participants and Recruitment</h2>
+
         <p>
-          We recruited participants from Data Science, Math, and Economics classes at UCSD. Data collection took place during the first half of winter quarter. Selection of these courses aimed to target students with comparable quantitative backgrounds, ensuring a similar baseline level of mathematics and coding skills for completing the tasks in our study.
+          We recruited 50 participants from data science–related courses at the University of California San Diego during the first half of the winter quarter. Recruitment primarily came from courses such as DSC 10, DSC 20, DSC 140B, and DSC 180, with smaller numbers of participants drawn from several other DSC courses. Outreach was conducted through in-class announcements and email invitations distributed by course instructors.
         </p>
+
         <p>
-          We conducted participant outreach through class announcements and emails distributed through the professors of each respective course. Students who chose to participate were first asked to complete an intake form administered through Google Forms. Background information such as name, email address, data science affiliation, math affiliation, class standing, related coursework, and self-reported familiarity with statistics, Python, and Chebyshev’s inequality was collected from each participant.
+          Before beginning the study, participants completed an intake questionnaire administered through Google Forms. The questionnaire collected background information including class standing, Data Science and Mathematics affiliations, number of statistics courses taken, and self-reported familiarity with statistics, Python programming, and Chebyshev’s inequality.
+        </p>
+
+        <p>
+          Among the 50 participants, 29 identified as Data Science majors, 11 as Data Science minors, and 10 reported no formal Data Science affiliation. On a five-point scale, participants reported moderate Python proficiency on average (mean = 3.34) and relatively limited familiarity with Chebyshev’s inequality (mean = 2.50). These patterns suggest that, although the sample was drawn from data science–related courses, prior preparation still varied across students.
+        </p>
+
+        <div class="image-text-container">
+          <div class="image-wrapper">
+            <img
+              src="data/intake_form/data_science_affiliation.png"
+              alt="Distribution of participants by Data Science affiliation"
+              class="results-image"
+            />
+          </div>
+          <div class="image-caption">
+            <p>Distribution of participants by Data Science affiliation.</p>
+          </div>
+          <div class="figure-note">
+            <p>
+              Most participants reported either a Data Science major or minor, while a smaller portion had no formal Data Science affiliation.
+            </p>
+          </div>
+        </div>
+
+        <div class="image-text-container">
+          <div class="image-wrapper">
+            <img
+              src="data/intake_form/recruitment_course_distribution.png"
+              alt="Distribution of participants by recruitment course"
+              class="results-image"
+            />
+          </div>
+          <div class="image-caption">
+            <p>Distribution of participants by recruitment course.</p>
+          </div>
+          <div class="figure-note">
+            <p>
+              Recruitment was concentrated in a small number of DSC courses, with DSC 10, DSC 20, DSC 140B, and DSC 180 contributing most of the participant pool.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          These participant characteristics are important for interpreting the results. Students majoring in Data Science, or students recruited from more advanced courses, are more likely to have completed multiple statistics courses and to have stronger prior exposure to probability and statistical concepts. As a result, prior background may act as a confounding factor when comparing instructional conditions, since higher performance could partly reflect existing preparation rather than the effect of the teaching intervention itself.
         </p>
       </section>
 
       <section id="study-design">
-        <h2>Study Design</h2>
-        <p>
-          Our study employs a four-condition, full-factorial design to compare the effectiveness of different instructional approaches. The four treatment groups are as follows:
-        </p>
+  <h2>Study Design</h2>
 
-        <ul id="groups">
-          <li>No coding, no handwritten</li>
-          <li>Coding only</li>
-          <li>Handwritten only</li>
-          <li>Coding + handwritten</li>
-        </ul>
+  <p>
+    Our study used a four-condition, full-factorial design to compare the effectiveness of different instructional approaches for learning probability. Participants were randomly assigned to one of four treatment groups that varied by whether they received coding exercises, handwritten exercises, both, or neither.
+  </p>
 
-        <p>
-          Participants were randomly assigned to one of the four conditions, ensuring that each group had a comparable mix of students from different backgrounds and courses. Materials were administered through Gradescope, and all content focused on the topic of Chebyshev’s inequality, a concept that approximately 60% of students reported not being familiar with. Each participant took a final assessment after completing their assigned tasks, producing a quantitative score that served as the primary outcome variable for evaluating differences in learning outcomes across treatment conditions.
-        </p>
-      </section>
+  <p>
+    Throughout the analysis and the figures shown later in this report, these four groups are labeled numerically as follows:
+  </p>
 
-      <section id="eda">
-        <h2>Exploratory Data Analysis</h2>
-        <p>
-          Before fitting formal statistical models, we examined the score distributions and overall performance patterns across instructional groups. These exploratory views provide context for the later regression and ANOVA results by showing the relative spread, central tendency, and consistency of student outcomes under each treatment condition.
-        </p>
-      </section>
+  <ul id="groups">
+    <li><strong>Group 1</strong>: No coding, no handwritten</li>
+    <li><strong>Group 2</strong>: Coding only</li>
+    <li><strong>Group 3</strong>: Handwritten only</li>
+    <li><strong>Group 4</strong>: Coding + handwritten</li>
+  </ul>
 
-      <section id="features">
-        <h2>Feature Construction</h2>
-        <p>
-          In addition to treatment assignment, we considered intake-form variables describing student background and prior preparation. These features allow us to investigate whether differences in adjusted final score are better explained by instructional condition alone or by a broader set of student characteristics.
-        </p>
-      </section>
+  <p>
+    This numbering convention is used in several plots and model outputs throughout the report, where the horizontal axis is abbreviated as 1, 2, 3, and 4. Defining the labels here helps connect the later visualizations back to the instructional conditions represented by each group.
+  </p>
+
+  <p>
+    Materials were administered through Gradescope, and all activities focused on Chebyshev’s inequality, a topic with which many participants reported limited prior familiarity. After completing the assigned materials, each participant took a final assessment. The resulting score served as the primary outcome measure for evaluating differences in learning outcomes across the four instructional conditions.
+  </p>
+</section>
 
       <section id="findings">
         <h2>Main Findings</h2>
@@ -97,7 +181,6 @@
 
         <div class="result-columns">
 
-          <!-- Raw final -->
           <div class="result-column-box">
             <h3>Raw Final Score</h3>
             <p class="result-column-summary">
@@ -107,7 +190,7 @@
             <div class="image-text-container">
               <div class="image-wrapper">
                 <img
-                  src="data/exploratory_data_analysis_outputs/Final Assessment Scores by Group.png"
+                  src="outputs/exploratory_data_analysis/Final Assessment Scores by Group.png"
                   alt="Final Assessment Scores by Group"
                   class="results-image"
                 />
@@ -132,7 +215,7 @@
               <div class="image-text-container">
                 <div class="image-wrapper">
                   <img
-                    src="data/statistic_analysis_outputs/final_coef.png"
+                    src="outputs/statistic_analysis/final_coef.png"
                     alt="Coefficient estimates for raw final score model"
                     class="results-image"
                   />
@@ -158,7 +241,7 @@
               <div class="image-text-container">
                 <div class="image-wrapper">
                   <img
-                    src="data/statistic_analysis_outputs/anova_final.png"
+                    src="outputs/statistic_analysis/anova_final.png"
                     alt="ANOVA results for raw final score"
                     class="results-image"
                   />
@@ -175,7 +258,6 @@
             </div>
           </div>
 
-          <!-- Adjusted final -->
           <div class="result-column-box">
             <h3>Confidence-Adjusted Final Score</h3>
             <p class="result-column-summary">
@@ -185,7 +267,7 @@
             <div class="image-text-container">
               <div class="image-wrapper">
                 <img
-                  src="data/exploratory_data_analysis_outputs/Final Assessment Scores (Adjusted) by Group.png"
+                  src="outputs/exploratory_data_analysis/Final Assessment Scores (Adjusted) by Group.png"
                   alt="Adjusted final assessment scores by group"
                   class="results-image"
                 />
@@ -210,7 +292,7 @@
               <div class="image-text-container">
                 <div class="image-wrapper">
                   <img
-                    src="data/statistic_analysis_outputs/adj_final_coef.png"
+                    src="outputs/statistic_analysis/adj_final_coef.png"
                     alt="Coefficient estimates for adjusted final score model"
                     class="results-image"
                   />
@@ -236,7 +318,7 @@
               <div class="image-text-container">
                 <div class="image-wrapper">
                   <img
-                    src="data/statistic_analysis_outputs/anova_final_adj.png"
+                    src="outputs/statistic_analysis/anova_final_adj.png"
                     alt="ANOVA results for adjusted final score"
                     class="results-image"
                   />
@@ -268,7 +350,7 @@
           <div class="image-text-container">
             <div class="image-wrapper">
               <img
-                src="data/exploratory_data_analysis_outputs/Calibration by Section Mean Score vs Confidence.png"
+                src="outputs/exploratory_data_analysis/Calibration by Section Mean Score vs Confidence.png"
                 alt="Calibration by section: mean score versus confidence"
                 class="discussion-wide-image"
               />
@@ -299,7 +381,7 @@
             <div class="image-text-container">
               <div class="image-wrapper">
                 <img
-                  src="data/statistic_analysis_outputs/adj_final_model.png"
+                  src="outputs/statistic_analysis/adj_final_model.png"
                   alt="Adjusted final score model without intake features"
                   class="results-image"
                 />
@@ -317,7 +399,7 @@
             <div class="image-text-container">
               <div class="image-wrapper">
                 <img
-                  src="data/statistic_analysis_outputs/intake_adj_final_model.png"
+                  src="outputs/statistic_analysis/intake_adj_final_model.png"
                   alt="Adjusted final score model with intake features"
                   class="results-image"
                 />
@@ -341,7 +423,7 @@
             <div class="image-text-container">
               <div class="image-wrapper">
                 <img
-                  src="data/statistic_analysis_outputs/intake_adj_final_coef.png"
+                  src="outputs/statistic_analysis/intake_adj_final_coef.png"
                   alt="Coefficient estimates for adjusted final score model with intake features"
                   class="discussion-wide-image"
                 />
@@ -415,22 +497,22 @@
 
       <section id="takeaways">
         <h2>Key Takeaways</h2>
+
         <p>
-          This study explored the efficacy of simulation-based coding exercises in improving students’ understanding of probability compared to traditional handwritten approaches. Across both exploratory analysis and formal statistical tests, we found that students who completed structured engagement activities—whether coding, handwritten, or both—tended to perform slightly better than students who did not complete exercises. However, ANOVA tests for both raw and confidence-adjusted scores indicated that coding and handwritten exercises had statistically equivalent effects, and there was no significant interaction effect between the two treatments.
+          This project was motivated by a simple question: can simulation-based coding activities help students learn probability more effectively? To explore this, we developed a set of probability teaching materials and then tested their usefulness in a classroom-based study against traditional handwritten approaches.
         </p>
 
         <p>
-          One limitation of this study is the relatively small sample size, which reduces the statistical power of our analyses and may limit generalizability. Future research could address this by including a larger and more diverse participant pool. Additionally, incorporating a before-and-after assessment design could better capture individual learning gains by controlling for baseline knowledge differences.
+          Our results suggest that structured engagement activities are beneficial overall, but that coding and handwritten exercises had statistically similar effects under the current sample. We also did not observe a significant additional benefit from combining both forms of activity. In this sense, the project suggests that simulation-based coding materials are a promising teaching approach, though not necessarily one that outperforms handwritten work in a clearly measurable way in this setting.
         </p>
 
         <p>
-          Our findings also highlight the importance of considering students’ confidence in their responses. Adjusted score analyses showed that some variation in performance may relate to over- or under-confidence rather than actual mastery, suggesting that instructional strategies could also focus on calibrating confidence alongside skill development. Overall, while coding exercises are a promising tool for active engagement, this study suggests that their benefits may be similar to traditional handwritten approaches, and further research is needed to determine how different instructional modalities can optimally support learning in probability and related subjects.
+          The study also highlights several directions for future work, including larger sample sizes, stronger control for baseline preparation, and broader testing across additional probability topics. Beyond this evaluation, we maintain a separate repository containing the teaching materials we developed, including exercises, solutions, and lesson notes. If you are interested in this project or would like to see the materials we explored, please contact Peter Chi at <a href="mailto:pbchi@ucsd.edu">pbchi@ucsd.edu</a>.
         </p>
       </section>
 
     </main>
 
-    <!-- Right-side navigation -->
     <aside class="side-nav" aria-label="Section navigation">
       <div class="side-nav-inner">
         <p class="side-nav-label">On this page</p>
@@ -439,8 +521,6 @@
           <a href="#research-goal">Research Goal</a>
           <a href="#study-sample">Participants</a>
           <a href="#study-design">Study Design</a>
-          <a href="#eda">EDA</a>
-          <a href="#features">Features</a>
           <a href="#findings">Findings</a>
           <a href="#interpretation">Discussion</a>
           <a href="#takeaways">Takeaways</a>
