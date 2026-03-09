@@ -185,8 +185,9 @@ This repo also includes materials for communicating the project beyond the code 
 
 If you are interested in this project, please also check out our website, report, and poster for a more concise overview of the motivation, methods, and results.
 
-* Project site: **[https://sainthades.github.io/Simulation-coding-exercises-for-teaching-probability-theory/](https://sainthades.github.io/Simulation-coding-exercises-for-teaching-probability-theory/)**
-* GitHub repository: **[https://github.com/SaintHades/Simulation-coding-exercises-for-teaching-probability-theory](https://github.com/SaintHades/Simulation-coding-exercises-for-teaching-probability-theory)**
+* [Project site](https://sainthades.github.io/Simulation-coding-exercises-for-teaching-probability-theory/)
+* [Report](https://drive.google.com/file/d/1XmkFIjqt3R1LPCRlKbJCThSeEsLlsA_i/view)
+* [Poster](https://drive.google.com/file/d/1g-n-Jfu8-mkvlTnsiMQWEoVBfP2A2XJ0/view?pli=1)
 
 > The website is a front door for the project. The authoritative reproduction instructions are in this README and the notebooks.
 
